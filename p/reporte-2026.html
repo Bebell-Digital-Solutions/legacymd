@@ -1,1 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Infraestructura Clínica 2026 | Bebell Digital Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos adicionales para impresión y suavizado */
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white; }
+            .print-border { border: 1px solid #cbd5e1; }
+        }
+        
+        /* Animación suave para el FAQ */
+        .faq-answer {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .faq-answer.active {
+            max-height: 200px; /* Altura suficiente para el contenido */
+            opacity: 1;
+        }
+
+        /* Chart bar transition */
+        .chart-bar {
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-teal-100 print:bg-white">
+
+    
+
+
+
+<!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="bg-teal-600 text-white p-1.5 rounded-lg">
+                        <i data-lucide="activity" width="20" height="20"></i>
+                    </div>
+
+
+
+
+                    <span class="font-bold text-xl tracking-tight text-slate-900">
+                        Legacy<span class="text-teal-600">MD</span> Reports
+                    </span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:flex text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        Reporte de Infraestructura Clínica 2026
+                    </span>
+                    <button onclick="window.print()" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer">
+                        <i data-lucide="download" width="16" height="16"></i>
+                        <span class="hidden sm:inline">Descargar Estudio PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-full mx-auto text-center overflow-hidden bg-slate-900 print:pt-10 print:pb-10">
+
+
+
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0 no-print">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80" alt="Medical Technology Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-teal-900/90 to-slate-900/95 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <div class="inline-block mb-6 px-4 py-1.5 bg-teal-500/20 border border-teal-300/30 backdrop-blur-sm rounded-full text-teal-100 text-sm font-medium print:border-slate-300 print:text-slate-600 print:bg-transparent">
+                Actualización de Mercado: Enero 2026
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-sm print:text-slate-900">
+                La Presencia Digital como <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-200 print:text-teal-700">
+                    Infraestructura Clínica Básica
+                </span>
+            </h1>
+            <p class="text-xl text-teal-100/90 max-w-3xl mx-auto mb-10 leading-relaxed font-light print:text-slate-600">
+                En 2026, un médico sin sitio web propio no solo es invisible, es percibido como menos confiable. 
+                Los datos demuestran por qué esto ha dejado de ser una opción de marketing.
+            </p>
+        </div>
+    </header>
+
+    <!-- Key Stats Grid -->
+    <!-- Added ID for Scroll Observer -->
+    <section id="stats-section" class="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-24 -mt-10 relative z-20 print:mt-0 print:mb-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-teal-50 text-teal-600 border-teal-100 hover:border-teal-300 print:border-slate-300 print:bg-white">
+                <div class="mb-4"><i data-lucide="search"></i></div>
+                <div class="text-4xl font-extrabold mb-2 text-slate-900"><span class="counter" data-target="77">0</span>%</div>
+                <p class="text-sm font-medium text-slate-600 leading-snug">Pacientes buscan en Google antes de reservar, aun con recomendación.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-cyan-50 text-cyan-600 border-cyan-100 hover:border-cyan-300 print:border-slate-300 print:bg-white">
+                <div class="mb-4"><i data-lucide="calendar"></i></div>
+                <div class="text-4xl font-extrabold mb-2 text-slate-900"><span class="counter" data-target="43">0</span>%</div>
+                <p class="text-sm font-medium text-slate-600 leading-snug">De las citas online se agendan fuera del horario de oficina.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-indigo-50 text-indigo-600 border-indigo-100 hover:border-indigo-300 print:border-slate-300 print:bg-white">
+                <div class="mb-4"><i data-lucide="smartphone"></i></div>
+                <div class="text-4xl font-extrabold mb-2 text-slate-900"><span class="counter" data-target="94">0</span>%</div>
+                <p class="text-sm font-medium text-slate-600 leading-snug">De pacientes exigen la posibilidad de agendar en línea.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-purple-50 text-purple-600 border-purple-100 hover:border-purple-300 print:border-slate-300 print:bg-white">
+                <div class="mb-4"><i data-lucide="brain"></i></div>
+                <div class="text-4xl font-extrabold mb-2 text-slate-900"><span class="counter" data-target="16">0</span>%</div>
+                <p class="text-sm font-medium text-slate-600 leading-snug">De consultas son resueltas por resúmenes de IA (Zero-Click).</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deep Dive Sections -->
+    <section class="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-24 print:space-y-12">
+        
+        <!-- 1. The Visibility Abyss -->
+        <div class="grid md:grid-cols-2 gap-12 items-center group break-inside-avoid">
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-teal-100 to-cyan-100 rounded-2xl transform rotate-2 group-hover:rotate-1 transition-transform duration-500 no-print"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-slate-100 print:border-slate-300">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-50 p-3 rounded-lg"><i data-lucide="brain" class="text-teal-600"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Ecosistemas de IA</h4>
+                                <p class="text-sm text-slate-600">Sin Schema Markup, Gemini y ChatGPT no pueden verificar tu existencia.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-indigo-50 p-3 rounded-lg"><i data-lucide="smartphone" class="text-indigo-600"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Búsquedas por Voz</h4>
+                                <p class="text-sm text-slate-600">El 25% usa asistentes de voz. Sin web, no apareces como "el mejor cardiólogo cerca de mí".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white text-sm print:border print:border-slate-900">1</span>
+                    El Abismo de Visibilidad
+                </h2>
+                <p class="text-lg text-slate-600 mb-6">
+                    El comportamiento del paciente ha mutado radicalmente. Ya no "buscan enlaces", ahora 
+                    <span class="font-semibold text-teal-600"> reciben respuestas de la IA</span>.
+                </p>
+                <p class="text-slate-500">
+                    Si la IA no puede leer tu web estructurada, para el algoritmo simplemente no existes.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. Trust & Conversion -->
+        <div class="grid md:grid-cols-2 gap-12 items-center group break-inside-avoid">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white text-sm print:border print:border-slate-900">2</span>
+                    Confianza y Conversión
+                </h2>
+                <p class="text-lg text-slate-600 mb-6">
+                    Tu sitio web es el filtro definitivo entre un "curioso" y un "paciente agendado".
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i data-lucide="check-circle-2" class="text-green-500 shrink-0" width="20" height="20"></i>
+                        <span>La web reduce la fricción de llamadas telefónicas.</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i data-lucide="check-circle-2" class="text-green-500 shrink-0" width="20" height="20"></i>
+                        <span>Atención 24/7 sin personal administrativo nocturno.</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i data-lucide="check-circle-2" class="text-green-500 shrink-0" width="20" height="20"></i>
+                        <span>Validación inmediata de la reputación profesional.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-l from-indigo-100 to-purple-100 rounded-2xl transform -rotate-2 group-hover:-rotate-1 transition-transform duration-500 no-print"></div>
+                <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center print:border-slate-300">
+                    <i data-lucide="clock" class="mx-auto text-indigo-500 mb-4" width="48" height="48"></i>
+                    <div class="text-4xl font-extrabold text-slate-900 mb-2"><span class="counter" data-target="43">0</span>%</div>
+                    <p class="text-slate-600 font-medium">De ingresos potenciales perdidos</p>
+                    <p class="text-sm text-slate-400 mt-2">Al no capturar citas en noches y fines de semana.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Comparison Table -->
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl break-inside-avoid print:bg-slate-100 print:text-slate-900">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">La Realidad Comparativa (2026)</h2>
+                <p class="text-slate-300 print:text-slate-600">Datos proyectados basados en tendencias actuales de consumo de salud.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Column 1: Labels -->
+                <div class="hidden md:block col-span-1 p-6">
+                    <div class="text-xl font-bold mb-6 text-left text-slate-500 border-b border-slate-800 pb-4 print:border-slate-300">
+                        Métrica
+                    </div>
+                    <div class="space-y-6">
+                        <div class="h-16 flex items-center font-semibold text-slate-400 border-b border-slate-800 print:border-slate-300 print:text-slate-700">Conversión nuevos pacientes</div>
+                        <div class="h-16 flex items-center font-semibold text-slate-400 border-b border-slate-800 print:border-slate-300 print:text-slate-700">Confianza del paciente</div>
+                        <div class="h-16 flex items-center font-semibold text-slate-400 border-b border-slate-800 print:border-slate-300 print:text-slate-700">Citas fuera de horario</div>
+                        <div class="h-16 flex items-center font-semibold text-slate-400 border-b border-slate-800 print:border-slate-300 print:text-slate-700">Autoridad en IA</div>
+                    </div>
+                </div>
+
+                <!-- With Website -->
+                <div class="bg-teal-600 rounded-2xl p-6 transform hover:scale-105 transition-transform duration-300 shadow-xl border border-teal-500 relative overflow-hidden print:bg-white print:border-2 print:border-teal-600 print:text-slate-900">
+                    <div class="absolute top-0 right-0 p-4 opacity-10"><i data-lucide="globe" width="100" height="100"></i></div>
+                    <h3 class="text-xl font-bold mb-6 text-center border-b border-teal-400 pb-4 print:text-teal-700">Con Web Profesional</h3>
+                    <div class="space-y-6">
+                        <div class="h-16 flex flex-col justify-center border-b border-teal-500/50 print:border-slate-200">
+                            <span class="text-lg font-bold text-white flex items-center gap-2 print:text-slate-900">
+                                <i data-lucide="trending-up" width="18" height="18"></i> +35% Incremento
+                            </span>
+                            <span class="text-xs text-teal-200 print:text-slate-500">vs promedio del sector</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-teal-500/50 print:border-slate-200">
+                            <span class="text-lg font-bold text-white print:text-slate-900">Alta</span>
+                            <span class="text-xs text-teal-200 print:text-slate-500">Validada por contenido propio</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-teal-500/50 print:border-slate-200">
+                            <span class="text-lg font-bold text-white print:text-slate-900">100% Capturadas</span>
+                            <span class="text-xs text-teal-200 print:text-slate-500">Reserva automática</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-teal-500/50 print:border-slate-200">
+                            <span class="text-lg font-bold text-white print:text-slate-900">Verificada</span>
+                            <span class="text-xs text-teal-200 print:text-slate-500">Fuente de datos confiable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Without Website -->
+                <div class="bg-slate-800 rounded-2xl p-6 opacity-75 hover:opacity-100 transition-opacity border border-slate-700 no-print">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-400 border-b border-slate-700 pb-4">Solo Directorios/Redes</h3>
+                    <div class="space-y-6">
+                        <div class="h-16 flex flex-col justify-center border-b border-slate-700">
+                            <span class="text-lg font-bold text-slate-300">Estancada</span>
+                            <span class="text-xs text-slate-500">Dependiente de terceros</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-slate-700">
+                            <span class="text-lg font-bold text-slate-300">Moderada / Baja</span>
+                            <span class="text-xs text-slate-500">Sin control de narrativa</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-slate-700">
+                            <span class="text-lg font-bold text-red-400 flex items-center gap-2">
+                                <i data-lucide="user-x" width="18" height="18"></i> Perdidas
+                            </span>
+                            <span class="text-xs text-slate-500">Nadie contesta el teléfono</span>
+                        </div>
+                        <div class="h-16 flex flex-col justify-center border-b border-slate-700">
+                            <span class="text-lg font-bold text-slate-300">Nula</span>
+                            <span class="text-xs text-slate-500">Invisible para algoritmos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. E-E-A-T Authority -->
+        <div class="text-center max-w-4xl mx-auto break-inside-avoid">
+            <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-sm mb-6">
+                <i data-lucide="shield-check" width="16" height="16"></i> Factor Crítico Google 2026
+            </div>
+            <h2 class="text-3xl font-bold mb-6">El Factor E-E-A-T (Experiencia y Autoridad)</h2>
+            <p class="text-slate-600 mb-10 text-lg">
+                El 64% de los usuarios confía más en el contenido de salud si proviene directamente de la web del profesional, 
+                comparado con solo el 5% en redes sociales.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4 text-left">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-lg mb-2 text-slate-800">Propiedad de la Narrativa</h4>
+                    <p class="text-sm text-slate-600">Un sitio web es el único lugar donde usted controla 100% el mensaje, sin algoritmos que escondan sus publicaciones.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-lg mb-2 text-slate-800">Verificación de Licencias</h4>
+                    <p class="text-sm text-slate-600">Los buscadores usan su web oficial como "Centro de Mando" para validar sus credenciales ante el público local.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- 5. 2026 Mandatory Trends -->
+        <div class="border-t border-slate-200 pt-16 break-inside-avoid">
+            <h2 class="text-2xl font-bold mb-8 text-center text-teal-700">Requisitos Técnicos Obligatorios 2026</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center hover:border-teal-400 hover:shadow-md transition-all cursor-default flex flex-col items-center justify-center">
+                    <i data-lucide="calendar-check" width="28" height="28" class="text-teal-600 mb-2"></i>
+                    <div class="font-bold text-slate-800 mb-1">Agendamiento Real</div>
+                    <div class="text-xs text-slate-500">Integración con software clínico</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center hover:border-teal-400 hover:shadow-md transition-all cursor-default flex flex-col items-center justify-center">
+                    <i data-lucide="file-text" width="28" height="28" class="text-teal-600 mb-2"></i>
+                    <div class="font-bold text-slate-800 mb-1">Transparencia</div>
+                    <div class="text-xs text-slate-500">Información clara de seguros</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center hover:border-teal-400 hover:shadow-md transition-all cursor-default flex flex-col items-center justify-center">
+                    <i data-lucide="video" width="28" height="28" class="text-teal-600 mb-2"></i>
+                    <div class="font-bold text-slate-800 mb-1">Video Presentación</div>
+                    <div class="text-xs text-slate-500">+300% Retención de usuario</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center hover:border-teal-400 hover:shadow-md transition-all cursor-default flex flex-col items-center justify-center">
+                    <i data-lucide="code-2" width="28" height="28" class="text-teal-600 mb-2"></i>
+                    <div class="font-bold text-slate-800 mb-1">Schema Markup</div>
+                    <div class="text-xs text-slate-500">Optimización para lectura IA</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- 6. Evolution Stats Banner (Chart) -->
+        <!-- Added ID for Scroll Observer -->
+        <div id="chart-section" class="bg-white rounded-3xl border border-slate-200 p-8 shadow-inner break-inside-avoid mt-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-teal-100 p-2 rounded-lg">
+                    <i data-lucide="bar-chart-3" class="text-teal-600" width="24" height="24"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Evolución de Preferencia Digital (2022-2026)</h3>
+            </div>
+            <div class="relative h-64 flex items-end justify-between gap-2 md:gap-8 px-2 md:px-8">
+                
+                <!-- Chart Bar Item 1 -->
+                <div class="h-full flex flex-col items-center justify-end gap-2 w-full group relative z-10">
+                    <div class="text-xs font-bold text-slate-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6">45%</div>
+                    <div class="w-full md:w-16 rounded-t-lg flex items-end justify-center bg-teal-200 hover:bg-teal-300 chart-bar" style="height: 0%" data-height="45%">
+                    </div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400">2022</div>
+                </div>
+
+                <!-- Chart Bar Item 2 -->
+                <div class="h-full flex flex-col items-center justify-end gap-2 w-full group relative z-10">
+                    <div class="text-xs font-bold text-slate-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6">58%</div>
+                    <div class="w-full md:w-16 rounded-t-lg flex items-end justify-center bg-teal-200 hover:bg-teal-300 chart-bar" style="height: 0%" data-height="58%">
+                    </div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400">2023</div>
+                </div>
+
+                <!-- Chart Bar Item 3 -->
+                <div class="h-full flex flex-col items-center justify-end gap-2 w-full group relative z-10">
+                    <div class="text-xs font-bold text-slate-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6">72%</div>
+                    <div class="w-full md:w-16 rounded-t-lg flex items-end justify-center bg-teal-200 hover:bg-teal-300 chart-bar" style="height: 0%" data-height="72%">
+                    </div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400">2024</div>
+                </div>
+
+                <!-- Chart Bar Item 4 -->
+                <div class="h-full flex flex-col items-center justify-end gap-2 w-full group relative z-10">
+                    <div class="text-xs font-bold text-slate-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6">85%</div>
+                    <div class="w-full md:w-16 rounded-t-lg flex items-end justify-center bg-teal-200 hover:bg-teal-300 chart-bar" style="height: 0%" data-height="85%">
+                    </div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400">2025</div>
+                </div>
+
+                <!-- Chart Bar Item 5 (Active) -->
+                <div class="h-full flex flex-col items-center justify-end gap-2 w-full group relative z-10">
+                    <div class="text-xs font-bold text-slate-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6">94%</div>
+                    <div class="w-full md:w-16 rounded-t-lg flex items-end justify-center bg-teal-600 chart-bar" style="height: 0%" data-height="94%">
+                        <div class="text-white font-bold text-xs mb-2 hidden md:block">94%</div>
+                    </div>
+                    <div class="text-xs md:text-sm font-bold text-teal-700">2026</div>
+                </div>
+
+                <!-- Horizontal Grid lines -->
+                <div class="absolute inset-0 z-0 flex flex-col justify-between pointer-events-none opacity-20">
+                    <div class="w-full border-t border-slate-400"></div>
+                    <div class="w-full border-t border-slate-400"></div>
+                    <div class="w-full border-t border-slate-400"></div>
+                    <div class="w-full border-t border-slate-400"></div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-slate-500 mt-6 italic">
+                Porcentaje de pacientes que consideran "esencial" el agendamiento online.
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 7. FAQ Section -->
+        <div class="max-w-3xl mx-auto break-inside-avoid mt-24">
+            <h2 class="text-2xl font-bold mb-8 text-center">Preguntas Frecuentes sobre Infraestructura Digital</h2>
+            <div class="space-y-4" id="faq-container">
+                
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-lg bg-white overflow-hidden transition-all">
+                    <button class="faq-btn w-full flex justify-between items-center p-4 text-left font-bold text-slate-800 hover:bg-slate-50 transition-colors">
+                        ¿Por qué necesito una web si ya tengo Instagram/Doctoralia?
+                        <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300 icon-chevron"></i>
+                    </button>
+                    <div class="faq-answer px-4 text-slate-600 text-sm leading-relaxed border-t border-transparent">
+                        <div class="py-4">
+                            Las redes sociales son canales de alquiler; pueden cambiar su algoritmo o desaparecer. Su web es un activo propio que centraliza su autoridad y permite a Google verificar sus credenciales oficiales, algo que Instagram no puede hacer por sí solo.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-lg bg-white overflow-hidden transition-all">
+                    <button class="faq-btn w-full flex justify-between items-center p-4 text-left font-bold text-slate-800 hover:bg-slate-50 transition-colors">
+                        ¿Qué es el 'Schema Markup' y por qué es obligatorio?
+                        <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300 icon-chevron"></i>
+                    </button>
+                    <div class="faq-answer px-4 text-slate-600 text-sm leading-relaxed border-t border-transparent">
+                        <div class="py-4">
+                            Es un código invisible para humanos pero vital para la IA. Le dice a Google explícitamente: 'Soy un cardiólogo, acepto BlueCross y atiendo emergencias'. Sin esto, los asistentes de IA no pueden recomendarle con precisión.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-lg bg-white overflow-hidden transition-all">
+                    <button class="faq-btn w-full flex justify-between items-center p-4 text-left font-bold text-slate-800 hover:bg-slate-50 transition-colors">
+                        ¿Cuánto tiempo toma implementar una infraestructura completa?
+                        <i data-lucide="chevron-down" class="text-slate-400 transition-transform duration-300 icon-chevron"></i>
+                    </button>
+                    <div class="faq-answer px-4 text-slate-600 text-sm leading-relaxed border-t border-transparent">
+                        <div class="py-4">
+                            Con Bebell Digital Solutions, una infraestructura clínica base (Web + Schema + Agendamiento) puede estar operativa en 3-4 semanas, minimizando la interrupción de su práctica actual.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- 8. Sources Section -->
+        <div class="border-t border-slate-200 pt-16 break-inside-avoid mt-24">
+            <div class="flex items-center justify-center gap-2 mb-6 text-slate-500 uppercase text-xs font-bold tracking-widest">
+                <i data-lucide="book-open" width="14" height="14"></i> Fuentes de Investigación
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                
+                <div class="flex items-start gap-3 p-4 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer group border border-transparent hover:border-slate-200">
+                    <i data-lucide="external-link" class="text-slate-300 group-hover:text-teal-500 mt-1 shrink-0" width="16" height="16"></i>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm group-hover:text-teal-700 transition-colors">Google Health Trends Report 2025</h5>
+                        <p class="text-xs text-slate-500 mt-1">Análisis sobre el comportamiento de búsqueda 'Zero-Click' en medicina.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer group border border-transparent hover:border-slate-200">
+                    <i data-lucide="external-link" class="text-slate-300 group-hover:text-teal-500 mt-1 shrink-0" width="16" height="16"></i>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm group-hover:text-teal-700 transition-colors">Journal of Medical Internet Research</h5>
+                        <p class="text-xs text-slate-500 mt-1">Estudio sobre la correlación entre presencia web y confianza del paciente (Vol. 27).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer group border border-transparent hover:border-slate-200">
+                    <i data-lucide="external-link" class="text-slate-300 group-hover:text-teal-500 mt-1 shrink-0" width="16" height="16"></i>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm group-hover:text-teal-700 transition-colors">The 2026 Digital Patient Experience</h5>
+                        <p class="text-xs text-slate-500 mt-1">Encuesta global sobre preferencias de agendamiento y telemedicina.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer group border border-transparent hover:border-slate-200">
+                    <i data-lucide="external-link" class="text-slate-300 group-hover:text-teal-500 mt-1 shrink-0" width="16" height="16"></i>
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm group-hover:text-teal-700 transition-colors">Bebell Internal Data Analysis</h5>
+                        <p class="text-xs text-slate-500 mt-1">Métricas agregadas de rendimiento de clínicas digitalizadas en LATAM.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="mt-32 bg-slate-900 text-slate-300 py-16 px-4 no-print">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">No deje su práctica clínica en el pasado.</h2>
+            <p class="mb-8 text-lg">
+                La infraestructura digital es tan vital como su consultorio físico.
+            </p>
+            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 inline-block w-full max-w-lg">
+                <div class="flex flex-col items-center">
+                    <span class="text-teal-400 font-semibold tracking-wider uppercase text-sm mb-2">Preparado por</span>
+                    <h3 class="text-2xl font-bold text-white mb-4">Bebell Digital Solutions</h3>
+                    <p class="text-sm text-slate-400 mb-6">Especialistas en Transformación Digital para el Sector Salud</p>
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition-all flex items-center gap-2 group cursor-pointer">
+                        Solicitar Diagnóstico Digital
+                        <i data-lucide="arrow-right" width="18" height="18" class="group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Logic Script -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Animated Counters Logic
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.counter');
+            const duration = 2000; // ms
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const start = 0;
+                let startTime = null;
+
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    const percentage = Math.min(progress / duration, 1);
+                    
+                    // Easing: easeOutExpo
+                    const easeOut = (x) => (x === 1 ? 1 : 1 - Math.pow(2, -10 * x));
+                    
+                    const currentVal = Math.floor(easeOut(percentage) * target);
+                    counter.innerText = currentVal;
+
+                    if (progress < duration) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                window.requestAnimationFrame(step);
+            });
+        };
+
+        // 3. Chart Animation
+        const animateChart = () => {
+            const bars = document.querySelectorAll('.chart-bar');
+            bars.forEach(bar => {
+                bar.style.height = bar.getAttribute('data-height');
+            });
+        };
+
+        // 4. Initialize Observers
+        const initObservers = () => {
+            // Stats Grid Observer
+            const statsSection = document.getElementById('stats-section');
+            if (statsSection) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 }); // Trigger when 25% visible
+                statsObserver.observe(statsSection);
+            }
+
+            // Chart Section Observer
+            const chartSection = document.getElementById('chart-section');
+            if (chartSection) {
+                const chartObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateChart();
+                            chartObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 }); // Trigger when 25% visible
+                chartObserver.observe(chartSection);
+            }
+        };
+
+        // 5. FAQ Logic
+        const initFAQ = () => {
+            const btns = document.querySelectorAll('.faq-btn');
+            
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const answer = btn.nextElementSibling;
+                    const icon = btn.querySelector('.icon-chevron');
+                    const isActive = answer.classList.contains('active');
+
+                    if (isActive) {
+                        answer.classList.remove('active');
+                        answer.style.borderTopColor = 'transparent';
+                        icon.style.transform = 'rotate(0deg)';
+                        icon.classList.replace('text-teal-600', 'text-slate-400');
+                    } else {
+                        answer.classList.add('active');
+                        answer.style.borderTopColor = '#f1f5f9'; // slate-100
+                        icon.style.transform = 'rotate(180deg)';
+                        icon.classList.replace('text-slate-400', 'text-teal-600');
+                    }
+                });
+            });
+        };
+
+        // Run everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initObservers();
+            initFAQ();
+        });
+
+    </script>
+</body>
+</html>
