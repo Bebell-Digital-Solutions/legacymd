@@ -1,0 +1,1312 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>Consultorio Digital | HealthCare</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+    :root {
+      --primary-color: #12ac8e;
+      --primary-color-dark: #0d846c;
+      --primary-color-light: #e9f7f7;
+      --secondary-color: #fb923c;
+      --text-dark: #333333;
+      --text-light: #767268;
+      --white: #ffffff;
+      --max-width: 1200px;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .section__container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 5rem 1rem;
+    }
+
+    .section__header {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      white-space: nowrap;
+      color: var(--white);
+      background-color: var(--secondary-color);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      display: flex;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: white;
+    }
+
+    header {
+      background-image: linear-gradient(
+          to right,
+          rgba(18, 172, 142, 0.9),
+          rgba(18, 172, 142, 0.7)
+        ),
+        url("https://bucket.mlcdn.com/a/3336/3336910/images/34735de111f6eb4cc64f60ed28c4a5580831f484.jpeg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .nav__container {
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nav__logo span {
+      color: var(--secondary-color);
+    }
+
+    .nav__links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .link a {
+      padding: 0.5rem;
+      color: var(--primary-color-light);
+    }
+
+    .link a:hover {
+      color: var(--white);
+    }
+
+    .header__container {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .header__container h1 {
+      margin-bottom: 1rem;
+      max-width: 800px;
+      font-size: 3.5rem;
+      line-height: 4rem;
+      color: var(--white);
+    }
+
+    .header__container p {
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: var(--primary-color-light);
+    }
+
+    .header__form {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .header__form form {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header__form input {
+      padding: 1rem;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      color: var(--primary-color);
+      background-color: var(--primary-color-light);
+      border-radius: 5px;
+    }
+
+    .header__form input::placeholder {
+      color: var(--primary-color);
+    }
+
+    .form__btn {
+      background-color: var(--primary-color);
+      transition: 0.3s;
+    }
+
+    .form__btn:hover {
+      background-color: var(--primary-color-dark);
+    }
+
+    .header__form h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    
+    
+    
+    
+    
+    
+    /* Add this to your CSS */
+.service {
+  background: #f1f1f1;
+  width: 100%;
+}
+
+.why {
+  background: #e9f7f7;
+  width: 100%;
+}
+
+/* Update these existing selectors */
+.service__container {
+  padding: 5rem 1rem;
+}
+
+.why__container {
+  padding: 5rem 1rem;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+
+    .service__container {
+    width: 100%;
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+    .service__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .service__header__content p {
+      max-width: 600px;
+      color: var(--text-light);
+    }
+
+    .service__btn {
+      padding: 0.75rem 1rem;
+      outline: none;
+      font-size: 1rem;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      background-color: transparent;
+      border-radius: 5px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .service__btn:hover {
+      color: var(--white);
+      background-color: var(--primary-color);
+    }
+    
+    
+
+    .service__grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service__card {
+    background: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .service__card span {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 10px 20px;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      background-color: var(--primary-color-light);
+      border-radius: 100%;
+      transition: 0.3s;
+    }
+
+    .service__card h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .service__card p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .service__card a {
+      color: var(--primary-color);
+    }
+
+    .service__card a:hover {
+      color: var(--primary-color-dark);
+    }
+
+    .service__card:hover span {
+      color: var(--primary-color-light);
+      background-color: var(--primary-color);
+    }
+    
+    
+    
+    
+
+    .about__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about__content p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .about__image img {
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+    }
+    
+    
+    
+
+    .why__container {
+        width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    
+    
+
+    .why__image img {
+      max-width: 460px;
+      margin: auto;
+      border-radius: 10px;
+      background: white;
+    }
+    
+
+    .why__content p {
+      color: var(--text-light);
+    }
+    
+    
+
+    .why__grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 80px auto;
+      gap: 2rem;
+    }
+
+
+
+    .why__grid span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      border-radius: 10px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+      background: white;  /* Add this line */
+    }
+    
+    
+
+    .why__grid h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .why__grid p {
+      color: var(--text-light);
+    }
+
+    
+    
+    
+    .doctors__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .doctors__header__content p {
+      max-width: 600px;
+      color: var(--text-light);
+    }
+
+
+
+/* Updated Doctor Carousel Styles */
+.doctors__grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  margin-top: 4rem;
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem; /* Space for scrollbar */
+}
+
+
+
+
+.doctors__grid::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+
+
+
+
+.doctors__card {
+  flex: 0 0 calc(33.333% - 1.33rem);
+  min-width: calc(33.333% - 1.33rem);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  text-align: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+    
+    
+
+    .doctors__card__image {
+      position: relative;
+      overflow: hidden;
+    }
+
+
+
+
+    .doctors__socials {
+      position: absolute;
+      left: 0;
+      bottom: -4rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      transition: 0.5s;
+    }
+    
+    
+    
+
+    .doctors__socials span {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      background-color: var(--white);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    
+
+    .doctors__socials span:hover {
+      color: var(--primary-color);
+    }
+    
+    
+    
+
+    .doctors__card:hover .doctors__socials {
+      bottom: 2rem;
+    }
+    
+    
+    
+
+    .doctors__card h4 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    
+    
+
+    .doctors__card p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    
+    
+    
+
+    /* Navigation buttons */
+    .doctors__nav {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    
+    
+
+    .doctors__nav span {
+      padding: 5px 15px;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      background-color: var(--primary-color-light);
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    
+    
+    
+
+    .doctors__nav span:hover:not(.disabled) {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+
+
+
+
+
+    .doctors__nav span.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+
+
+
+
+    .footer {
+      background-color: var(--primary-color-light);
+    }
+    
+    
+    
+    
+
+    .footer__container {
+      display: grid;
+      grid-template-columns: 400px repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    
+    
+    
+
+    .footer__col h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+
+
+
+
+    .footer__col h3 span {
+      color: var(--secondary-color);
+    }
+
+
+
+
+    .footer__col h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    
+    
+    
+
+    .footer__col p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    
+    
+
+    .footer__col p:hover {
+      color: var(--primary-color);
+    }
+
+
+
+
+    .footer__col i {
+      color: var(--primary-color);
+    }
+
+
+
+
+    .footer__bar {
+      background-color: var(--primary-color);
+    }
+    
+    
+    
+    
+    .footer__bar__content {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    
+    
+    
+
+    .footer__bar__content p {
+      font-size: 0.8rem;
+      color: var(--white);
+    }
+
+
+
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      color: var(--white);
+      cursor: pointer;
+    }
+    
+    
+    
+
+    @media (width < 900px) {
+      
+      .service__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      
+      
+
+      .about__container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
+      
+      
+
+      .about__image {
+        grid-area: 1/1/2/2;
+      }
+      
+      
+      
+
+      .about__content {
+        text-align: center;
+      }
+      
+      
+      
+
+      .why__container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
+      
+
+      .why__content {
+        text-align: center;
+      }
+
+
+
+      .why__grid {
+        text-align: left;
+      }
+
+
+
+      .doctors__card {
+        flex: 0 0 calc(50% - 1rem);
+        min-width: calc(50% - 1rem);
+      }
+      
+      
+
+      .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    
+
+    @media (width < 780px) {
+      .nav__links {
+        display: none;
+      }
+      
+      
+
+      .header__container {
+        flex-direction: column;
+      }
+    }
+    
+    
+    
+
+    @media (width < 600px) {
+      .service__header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      
+      
+
+      .service__grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
+      
+
+      .why__grid {
+        column-gap: 1rem;
+      }
+      
+      
+      
+
+      .doctors__header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      
+      
+
+      .doctors__card {
+        flex: 0 0 100%;
+        min-width: 100%;
+      }
+      
+
+      .footer__bar__content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="section__container nav__container">
+      <div class="nav__logo">Health<span>Care</span></div>
+      <ul class="nav__links">
+       <li class="link"><a href="#home">Inicio</a></li>
+        <li class="link"><a href="#about">Sobre Nosotros</a></li>
+        <li class="link"><a href="#service">Servicios</a></li>
+        <li class="link"><a href="#pages">Páginas</a></li>
+        <li class="link"><a href="#blog">Blog</a></li>
+      </ul>
+      <button class="btn">Contáctanos</button>
+    </nav>
+   
+   
+   
+   
+ 
+   <div class="section__container header__container" id="home">
+      <div class="header__content">
+        <h1>Brindando una Experiencia Excepcional al Paciente</h1>
+        <p>
+          Bienvenido, donde las experiencias excepcionales del paciente son nuestra prioridad.
+          Con atención compasiva, instalaciones de vanguardia y un
+          enfoque centrado en el paciente, estamos dedicados a tu bienestar. Confía
+          en nosotros con tu salud y experimenta la diferencia.
+        </p>
+        <button class="btn">Ver Servicios</button>
+      </div>
+      <div class="header__form">
+        <form>
+          <h4>Reserva Ahora</h4>
+          <input type="text" placeholder="Nombre" />
+          <input type="text" placeholder="Apellido" />
+          <input type="text" placeholder="Dirección" />
+          <input type="text" placeholder="Teléfono" />
+          <button class="btn form__btn">Reservar Cita</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+  
+  
+  
+  
+<!-- Servicios Section -->
+<section class="service" id="service">
+  <div class="section__container service__container" id="service" style="background: #f1f1f1;">
+    <div class="service__header">
+      <div class="service__header__content">
+        <h2 class="section__header">Nuestro Servicio Especial</h2>
+        <p>
+          Más allá de simplemente brindar atención médica, nuestro compromiso radica en
+          ofrecer un servicio incomparable adaptado a tus necesidades únicas.
+        </p>
+      </div>
+      <button class="service__btn">Solicitar un Servicio</button>
+    </div>
+    <div class="service__grid">
+      <div class="service__card">
+        <span><i class="ri-microscope-line"></i></span>
+        <h4>Pruebas de Laboratorio</h4>
+        <p>
+          Diagnósticos precisos, resultados rápidos: Experimenta pruebas de laboratorio
+          de primera categoría en nuestras instalaciones.
+        </p>
+        <a href="#">Saber Más</a>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-mental-health-line"></i></span>
+        <h4>Chequeo de Salud</h4>
+        <p>
+          Nuestras evaluaciones exhaustivas y valoraciones expertas te ayudan a mantenerte
+          proactivo acerca de tu salud.
+        </p>
+        <a href="#">Saber Más</a>
+      </div>
+      <div class="service__card">
+        <span><i class="ri-hospital-line"></i></span>
+        <h4>Odontología General</h4>
+        <p>
+          Experimenta cuidado oral integral con Odontología. Confía en nosotros para mantener
+          tu sonrisa saludable y brillante.
+        </p>
+        <a href="#">Saber Más</a>
+      </div>
+    </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+    <section class="section__container about__container" id="about" style="background: white;">
+    <div class="about__content">
+      <h2 class="section__header">Sobre Nosotros</h2>
+      <p>
+        Bienvenido a nuestro sitio web de salud, tu destino único para información
+        confiable y completa sobre atención médica. Estamos comprometidos a
+        promover el bienestar y proporcionar recursos valiosos para empoderarte
+        en tu viaje de salud.
+      </p>
+      <p>
+        Explora nuestra amplia colección de artículos y guías escritos por expertos que cubren una
+        amplia gama de temas de salud. Desde comprender condiciones médicas comunes
+        hasta consejos para mantener un estilo de vida saludable, nuestro contenido está diseñado
+        para educar, inspirar y apoyarte en la toma de decisiones informadas para tu salud.
+      </p>
+      <p>
+        Descubre consejos prácticos de salud y recomendaciones de estilo de vida para optimizar
+        tu bienestar físico y mental. Creemos que pequeños cambios pueden llevar a
+        mejoras significativas en tu calidad de vida, y estamos aquí para
+        guiarte en tu camino hacia una vida más saludable y feliz.
+      </p>
+    </div>
+    <div class="about__image">
+      <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/imagen-principal.png" alt="about" />
+    </div>
+  </section>
+  
+  
+  
+  
+  <section class="why" id="blog">
+
+  <div  class="section__container why__container" id="blog" style="background: #e9f7f7;">
+    <div class="why__image">
+      <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/doctor-tiny.png" alt="why choose us" />
+    </div>
+    <div class="why__content">
+      <h2 class="section__header">Por Qué Elegirnos</h2>
+      <p>
+        Con un compromiso inquebrantable con tu bienestar, nuestro equipo de
+        profesionales de la salud altamente capacitados asegura que recibas nada
+        menos que experiencias excepcionales como paciente.
+      </p>
+      <div class="why__grid">
+        <span><i class="ri-hand-heart-line"></i></span>
+        <div>
+          <h4>Cuidado Intensivo</h4>
+          <p>
+            Nuestra Unidad de Cuidados Intensivos está equipada con tecnología avanzada y
+            atendida por un equipo de profesionales.
+          </p>
+        </div>
+        <span><i class="ri-truck-line"></i></span>
+        <div>
+          <h4>Ambulancia Gratuita</h4>
+          <p>
+            Una iniciativa compasiva para priorizar tu salud y
+            bienestar sin ninguna carga financiera.
+          </p>
+        </div>
+        <span><i class="ri-hospital-line"></i></span>
+        <div>
+          <h4>Médico y Quirúrgico</h4>
+          <p>
+            Nuestros servicios médicos y quirúrgicos ofrecen soluciones de atención médica
+            avanzada para satisfacer tus necesidades médicas.
+          </p>
+        </div>
+      </div>
+    </div>
+     </div>
+  </section>
+  
+  
+  
+  
+
+  <section class="section__container doctors__container" id="pages">
+    <div class="doctors__header">
+      <div class="doctors__header__content">
+        <h2 class="section__header">Nuestros Doctores Especiales</h2>
+        <p>
+          Nos enorgullece nuestro equipo excepcional de doctores, cada uno especialista
+          en sus respectivos campos.
+        </p>
+      </div>
+      <div class="doctors__nav">
+        <span class="prev-btn"><i class="ri-arrow-left-line"></i></span>
+        <span class="next-btn"><i class="ri-arrow-right-line"></i></span>
+      </div>
+    </div>
+
+    <div class="doctors__grid">
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Emily.png" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Dra. Emily Santiago</h4>
+        <p>Cardióloga</p>
+      </div>
+
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Michael.png" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Dr. Michael Lee</h4>
+        <p>Dermatólogo</p>
+      </div>
+
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Alicia.png" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Dra. Alicia Anderson</h4>
+        <p>Neurocirujana</p>
+      </div>
+      
+      
+      
+
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Jose.jpg" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Dr. José Alberto</h4>
+        <p>Urólogo</p>
+      </div>
+
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Patrick.jpg" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Dr. Patrick Domingo</h4>
+        <p>Neurocirujano</p>
+      </div>
+      
+      
+
+      <div class="doctors__card">
+        <div class="doctors__card__image">
+          <img src="https://bebell-digital-solutions.github.io/consultorio-digital-demo/activos/Personal.jpg" alt="doctor" />
+          <div class="doctors__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+        <h4>Alicia Anderson</h4>
+        <p>Enfermera</p>
+      </div>
+      
+      
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Health<span>Care</span></h3>
+        <p>
+          Nos sentimos honrados de ser parte de tu viaje de atención médica y comprometidos
+          a brindar atención compasiva, personalizada y de primera categoría en cada
+          paso del camino.
+        </p>
+        <p>
+          Confía en nosotros con tu salud, y trabajemos juntos para lograr los
+          mejores resultados posibles para ti y tus seres queridos.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Sobre Nosotros</h4>
+        <p>Inicio</p>
+        <p>Sobre Nosotros</p>
+        <p>Trabaja con Nosotros</p>
+        <p>Nuestro Blog</p>
+        <p>Términos y Condiciones</p>
+      </div>
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <p>Términos de Búsqueda</p>
+        <p>Búsqueda Avanzada</p>
+        <p>Política de Privacidad</p>
+        <p>Proveedores</p>
+        <p>Nuestras Tiendas</p>
+      </div>
+      <div class="footer__col">
+        <h4>Contáctanos</h4>
+        <p>
+          <i class="ri-map-pin-2-fill"></i> 123, Calle London Bridge, Santo Domingo, Rep. Dom.
+        </p>
+        <p><i class="ri-mail-fill"></i> support@care.com</p>
+        <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="footer__bar__content">
+        <p>Copyright © 2023 Powered by Bebell Digital Solutions. All rights reserved.</p>
+        <div class="footer__socials">
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-heart-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle functionality
+      const navToggle = document.createElement('button');
+      navToggle.className = 'nav-toggle btn';
+      navToggle.innerHTML = '<i class="ri-menu-line"></i>';
+      navToggle.style.display = 'none';
+      
+      const navContainer = document.querySelector('.nav__container');
+      navContainer.appendChild(navToggle);
+      
+      const navLinks = document.querySelector('.nav__links');
+      
+      navToggle.addEventListener('click', function() {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      });
+      
+      // Responsive behavior
+      function handleResize() {
+        if (window.innerWidth < 780) {
+          navToggle.style.display = 'block';
+          navLinks.style.display = 'none';
+        } else {
+          navToggle.style.display = 'none';
+          navLinks.style.display = 'flex';
+        }
+      }
+      
+      // Initial check
+      handleResize();
+      
+      // Add resize listener
+      window.addEventListener('resize', handleResize);
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (window.innerWidth < 780) {
+              navLinks.style.display = 'none';
+            }
+          }
+        });
+      });
+      
+      
+      
+      
+      
+      
+      
+// Doctor carousel functionality
+const doctorsGrid = document.querySelector('.doctors__grid');
+const doctorCards = document.querySelectorAll('.doctors__card');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+if (doctorsGrid && prevBtn && nextBtn && doctorCards.length > 0) {
+  let currentIndex = 0;
+  
+  function getCardsPerView() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+  }
+  
+  function scrollToCard(index) {
+    const cardsPerView = getCardsPerView();
+    currentIndex = Math.max(0, Math.min(index, doctorCards.length - cardsPerView));
+    
+    const cardWidth = doctorCards[0].offsetWidth + 32; // width + gap
+    doctorsGrid.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: 'smooth'
+    });
+    
+    updateButtonStates();
+  }
+  
+  function updateButtonStates() {
+    const cardsPerView = getCardsPerView();
+    prevBtn.classList.toggle('disabled', currentIndex === 0);
+    nextBtn.classList.toggle('disabled', currentIndex >= doctorCards.length - cardsPerView);
+  }
+  
+  prevBtn.addEventListener('click', () => {
+    scrollToCard(currentIndex - 1);
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    scrollToCard(currentIndex + 1);
+  });
+  
+  
+  
+  
+  // Handle window resize
+  function handleResize() {
+    scrollToCard(currentIndex); // Re-center on current index
+  }
+  
+  
+  
+  // Initialize
+  updateButtonStates();
+  window.addEventListener('resize', handleResize);
+  
+  
+  
+  
+  // Disable smooth scroll when resizing to prevent lag
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    doctorsGrid.style.scrollBehavior = 'auto';
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      doctorsGrid.style.scrollBehavior = 'smooth';
+    }, 100);
+  });
+}
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      // Form submission handling
+      const bookingForm = document.querySelector('.header__form form');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form values
+          const firstName = this.querySelector('input[placeholder="Nombre"]').value;
+          const lastName = this.querySelector('input[placeholder="Apellido"]').value;
+          
+          // Simple validation
+          if (!firstName || !lastName) {
+            alert('Por favor complete todos los campos requeridos');
+            return;
+          }
+          
+          alert(`¡Gracias, ${firstName} ${lastName}! Su solicitud de cita ha sido recibida. Nos comunicaremos con usted pronto.`);
+          
+          // Reset form
+          this.reset();
+        });
+      }
+      
+      
+      
+      
+      
+      // Service card hover effects
+      const serviceCards = document.querySelectorAll('.service__card');
+      serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+          this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '5px 5px 20px rgba(0, 0, 0, 0.1)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
