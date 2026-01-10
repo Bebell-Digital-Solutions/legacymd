@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegacyMD - Perfil Profesional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+
+    <style>
+        body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        
+        /* Animation Classes */
+        .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
+        .slide-up { animation: slideUp 0.5s ease-out forwards; }
+        .slide-in-right { animation: slideInRight 0.5s ease-out forwards; }
+        .zoom-in { animation: zoomIn 0.5s ease-out forwards; }
+        .hidden-step { 
+            display: none !important; 
+            opacity: 0;
+            pointer-events: none;
+        }
+        .active-step {
+            display: flex;
+            opacity: 1;
+        }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        /* Form input focus styles */
+        .form-input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        /* Smooth transitions */
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* MacBook CSS */
+        .macbook-wrapper {
+            position: relative;
+            background: transparent;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .macbook {
+            padding: 4% 6%;
+            margin: 0 auto;
+            max-width: 1500px;
+            background: transparent;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .screen {
+            background: #000;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            margin: 0 auto;
+            position: relative;
+            width: 80%;
+        }
+
+        .macbook-wrapper .screen:before {
+            border: 2px solid #cacacc;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+            content: "";
+            display: block;
+            padding-top: 67%;
+        }
+
+        .macbook-wrapper .viewport {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 4.3% 3.2%;
+            background: #F2F1FB;
+            border-radius: 4px;
+            transition: background-position 20s ease;
+            background-position: 0 0;
+            background-size: 100% auto;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .macbook-wrapper .macbook:hover .viewport {
+            background-position: 0 100%;
+        }
+
+        .macbook-wrapper .base {
+            position: relative;
+            width: 100%;
+            background: #F2F1FB;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .base:before {
+            content: "";
+            display: block;
+            padding-top: 3.3%;
+            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+            border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+        }
+
+        .macbook-wrapper .notch {
+            background: #ddd;
+            border-radius: 0 0 7% 7% / 0 0 95% 95%;
+            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -3.5%;
+            z-index: 2;
+            position: relative;
+            width: 14%;
+        }
+
+        .macbook-wrapper .notch:before {
+            content: "";
+            display: block;
+            padding-top: 10%;
+        }
+
+        .macbook-wrapper .macbook .viewport:after {
+            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+            bottom: 0;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden selection:bg-teal-100">
+
+
+
+    <!-- Background Accents -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-3/4 h-screen bg-gradient-to-l from-teal-50/50 to-transparent"></div>
+        <div class="absolute -top-20 -right-20 w-[600px] h-[600px] bg-purple-100/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-100/40 rounded-full blur-3xl"></div>
+    </div>
+
+   
+
+
+
+
+<!-- Navigation -->
+<nav class="relative z-20 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+        <a href="https://elnegocio.digital/consultorio-digital" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD Logo" class="w-10 h-10 object-contain" />
+            <span class="font-bold text-slate-800 text-xl tracking-tight">Legacy<span class="text-teal-600">MD</span></span>
+        </a>
+    </div>
+    <div class="hidden md:flex items-center gap-2 text-xs font-semibold text-teal-700 bg-teal-50 px-4 py-2 rounded-full border border-teal-100">
+        <i data-lucide="lock" class="w-3 h-3"></i>
+        Área Privada de Pérez
+    </div>
+</nav>
+
+
+
+
+
+    <!-- Hero Section -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <!-- Left Column: Pitch -->
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i data-lucide="star" class="w-3 h-3 fill-purple-700"></i>
+                    Exclusivo para Cardiólogo
+                </div>
+                
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Dr. Pérez, su <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">Autoridad Digital</span> está lista.
+                </h1>
+                
+                <p class="text-lg text-slate-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Hemos analizado su presencia pública y detectamos que su experiencia real supera su visibilidad online. Hemos preparado un <strong>Perfil Profesional Premium</strong> para solucionar esto hoy mismo.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start text-sm font-medium text-slate-600">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        Borrador Online
+                    </div>
+                    <div class="hidden sm:block text-slate-300">•</div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-teal-600"></i>
+                        Datos Seguros
+                    </div>
+                    <div class="hidden sm:block text-slate-300">•</div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-purple-600"></i>
+                        Mobile First
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Right Column: The Wizard -->
+            <div class="relative mx-auto w-full max-w-md lg:max-w-full">
+
+
+
+                <!-- Decoration -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-teal-400 rounded-xl rotate-12 opacity-20 blur-xl animate-pulse"></div>
+
+
+
+                
+                <!-- Wizard Card -->
+                <div class="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative min-h-[550px] flex flex-col transform transition-all hover:scale-[1.01] duration-500">
+                    
+   
+
+
+                 <!-- Progress Bar -->
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Estado de Configuración</span>
+                        <div class="flex items-center gap-2">
+                            <div class="h-1.5 w-24 bg-slate-200 rounded-full overflow-hidden">
+                                <div id="progress-bar" class="h-full bg-gradient-to-r from-teal-500 to-purple-600 transition-all duration-500" style="width: 25%"></div>
+                            </div>
+                            <span id="progress-text" class="text-xs font-bold text-teal-600">25%</span>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- STEP 1: IDENTITY -->
+                    <div id="step-1" class="flex-1 flex flex-col slide-up active-step step-transition">
+                        <div class="relative h-48 bg-slate-100 group overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=1000" alt="Preview" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=400" class="w-16 h-16 rounded-full border-4 border-white shadow-lg object-cover" alt="Profile" />
+                                    <div class="text-white">
+                                        <p class="text-xs font-medium opacity-80 uppercase tracking-wide">Perfil Reservado</p>
+                                        <h3 class="text-xl font-bold">Dr. Juan Pérez</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Verificación de Identidad</h3>
+                            <p class="text-slate-500 text-sm mb-6">Para proteger su reputación médica, confirme que este perfil le pertenece antes de continuar.</p>
+                            <button id="step1-button" onclick="nextStep()" class="mt-auto w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-lg shadow-teal-200 transition-all flex items-center justify-center gap-2 group">
+                                Sí, soy yo
+                                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- STEP 2: WHATSAPP/EMAIL -->
+                    <div id="step-2" class="flex-1 flex flex-col p-8 hidden-step step-transition">
+                        <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-6 text-green-600">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Información de Contacto</h3>
+                        <p class="text-slate-500 text-sm mb-6">Configure los canales donde recibirá las solicitudes de sus pacientes.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                             <div>
+                               <label class="text-xs font-bold text-slate-400 uppercase mb-1 block">WhatsApp Directo</label>
+                               <div class="flex items-center gap-3 border-b-2 border-slate-200 focus-within:border-green-500 py-2 transition-colors">
+                                  <span class="text-2xl">🇩🇴</span>
+                                  <input id="phoneInput" type="tel" placeholder="+1 (8XX) ..." class="w-full text-xl font-medium outline-none bg-transparent form-input" />
+                               </div>
+                             </div>
+                             <div>
+                               <label class="text-xs font-bold text-slate-400 uppercase mb-1 block">Correo Electrónico</label>
+                               <div class="flex items-center gap-3 border-b-2 border-slate-200 focus-within:border-teal-500 py-2 transition-colors">
+                                  <i data-lucide="mail" class="w-5 h-5 text-slate-400"></i>
+                                  <input id="emailInput" type="email" placeholder="ejemplo@doctor.com" class="w-full text-lg font-medium outline-none bg-transparent form-input" />
+                               </div>
+                             </div>
+                        </div>
+                        <button id="step2-button" onclick="nextStep()" class="mt-auto w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl shadow-lg transition-all">
+                            Confirmar Datos
+                        </button>
+                    </div>
+
+
+
+
+
+                    <!-- STEP 3: STATS -->
+                    <div id="step-3" class="flex-1 flex flex-col p-8 hidden-step step-transition">
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 text-purple-600">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Banner de Autoridad</h3>
+                        <p class="text-slate-500 text-sm mb-6">Hemos estimado esta cifra para su sección de experiencia. Ajuste el control deslizante si es necesario.</p>
+                        
+                        <div class="my-auto py-6 text-center">
+                            <span id="patientCountDisplay" class="text-5xl font-extrabold text-slate-800">5,000</span>
+                            <p class="text-xs font-bold text-teal-600 uppercase tracking-wider mt-2">Pacientes Atendidos</p>
+                            <input 
+                                id="patientInput"
+                                type="range" min="0" max="20000" step="1" 
+                                value="5000" 
+                                class="w-full mt-6 accent-purple-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer form-input"
+                            />
+                        </div>
+                        <button id="step3-button" onclick="finishStats()" class="mt-auto w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl shadow-lg transition-all">
+                            Guardar Estadísticas
+                        </button>
+                    </div>
+
+
+
+
+                    <!-- LOADING OVERLAY -->
+                    <div id="loading-overlay" class="absolute inset-0 bg-white z-50 flex flex-col items-center justify-center p-8 hidden-step step-transition">
+                        <div class="w-16 h-16 border-4 border-slate-100 border-t-purple-600 rounded-full animate-spin mb-6"></div>
+                        <h3 class="text-xl font-bold text-slate-800">Finalizando Perfil...</h3>
+                        <div class="space-y-2 mt-4 opacity-70">
+                            <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="check-circle-2" class="w-3 h-3 text-green-500"></i> Optimizando Imágenes</div>
+                            <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="check-circle-2" class="w-3 h-3 text-green-500"></i> Configurando SEO Local</div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- STEP 4: BOOKING -->
+                    <div id="step-4" class="flex-1 flex flex-col hidden-step step-transition relative h-full">
+                        <!-- Confetti Canvas -->
+                        <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-20"></canvas>
+                        
+                        <div class="bg-gradient-to-r from-teal-600 to-purple-600 p-6 text-white text-center">
+                            <i data-lucide="check-circle-2" class="w-10 h-10 mx-auto mb-2 text-teal-200"></i>
+                            <h3 class="text-xl font-bold">Perfil Listo para Activación</h3>
+                        </div>
+                        <div class="flex-1 bg-slate-50 p-6 flex flex-col items-center justify-center">
+                            <div class="w-full h-full border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center bg-white hover:border-teal-500 transition-colors cursor-pointer group p-8 text-center relative z-10">
+                                <i data-lucide="calendar" class="w-12 h-12 text-slate-300 group-hover:text-teal-500 mb-4 transition-colors"></i>
+                                <p class="font-bold text-slate-700">Agendar Demostración en Vivo</p>
+                                <p class="text-xs text-slate-400 mt-2">Sesión de 15 min • Vía Google Meet</p>
+                                <button id="step4-button" onclick="handleBooking()" class="mt-6 px-6 py-2 bg-slate-900 text-white text-sm font-bold rounded-lg shadow-lg hover:bg-slate-800 transition-all">
+                                    Abrir Calendario
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- Trust Label -->
+                <p class="text-center text-xs font-medium text-slate-400 mt-4 flex items-center justify-center gap-1">
+                    <i data-lucide="lock" class="w-3 h-3"></i>
+                    Sus datos no serán compartidos públicamente sin su permiso.
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- MacBook Demo Section -->
+        <div class="mt-10 fade-in" style="animation-delay: 0.3s;">
+            <div class="macbook-wrapper rounded-xl overflow-hidden">
+
+
+                <div class="macbook">
+                    <div class="screen">
+                        <div class="viewport" style="background-image: url('https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Portafolio/Consultorios%20Digitales/Macbook-Air-bebell-digital-solutions.github.io%20(6).png')">
+                        </div>
+                    </div>
+                    <div class="base"></div>
+                    <div class="notch"></div>
+               
+            <p class="text-center text-xs font-medium text-slate-400 mt-16 animate-pulse">
+                Deslice el mouse sobre la pantalla para ver el diseño completo
+            </p>
+ </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Features Section -->
+    <div class="bg-white border-y border-slate-100 py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">
+                Lo que incluye su nuevo perfil profesional
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center shrink-0">
+                        <i data-lucide="globe" class="w-6 h-6 text-teal-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Dominio Centralizado</h3>
+                        <p class="text-sm text-slate-500 mt-1">Una única bio con su experiencia, clínica y horarios. Deje de perder pacientes en Instagram.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Posicionamiento SEO</h3>
+                        <p class="text-sm text-slate-500 mt-1">Optimizamos su nombre para que aparezca primero cuando busquen "Cardiólogo en Santo Domingo".</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex gap-4 items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center shrink-0">
+                        <i data-lucide="headset" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Tu Recepcionista 24/7</h3>
+                        <p class="text-sm text-slate-500 mt-1">Chatbot para atención en tiempo real con una recepcionista entrenada con su información.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Video Section -->
+<section class="pt-16 pb-24 relative overflow-visible mt-24 mb-24">
+    <!-- Removed overflow-hidden and increased bottom padding -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-white shadow-xl rounded-3xl z-0 border border-slate-100"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-8">Mensaje del Fundador</h2>
+        
+        <div class="relative mx-auto max-w-2xl">
+            <!-- Video Container -->
+            <div id="video-container" onclick="playVideo()" class="aspect-video bg-slate-900 rounded-2xl shadow-2xl border-4 border-white overflow-hidden relative group cursor-pointer transform transition-transform hover:scale-[1.01] mb-8">
+                <!-- Thumbnail State -->
+                <div id="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" alt="Founder Video Thumbnail" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="play" class="w-8 h-8 text-white fill-current ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-md text-white text-xs font-bold flex items-center gap-2">
+                        <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                        LegacyMD Intro
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doodle Arrow -->
+            <div class="absolute -bottom-16 -right-6 md:-right-24 flex flex-col items-center rotate-[-6deg] z-20">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/cad8de294410a239e1e887ddbbc6baf80033d2b6.svg" alt="Arrow" class="w-16 h-16 mb-1 opacity-80" />
+                <span class="text-3xl font-bold text-slate-700 -mt-2 transform -rotate-2" style="font-family: 'Caveat', cursive;">
+                    Reproducir video
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 mb-4">
+                    <a href="https://elnegocio.digital/consultorio-digital" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/80a14e0eaa1e329f06524198044d53e3dcc75d28.png" alt="LegacyMD Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-slate-800 text-lg tracking-tight">HechoEn<span class="text-teal-600">RD</span></span>
+                    </a>
+                </div>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Transformando la presencia digital de los profesionales de la salud en República Dominicana.🇩🇴
+                </p>
+            </div>
+            <div class="col-span-1 md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4">Plataforma</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Inicio</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Servicios</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Planes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4">Compañía</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Términos</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <p>LegacyMD © 2024. Todos los derechos reservados.</p>
+            <p class="flex items-center gap-1">
+                Desarrollado con <span class="text-green-500">💚</span> por <span class="font-bold text-slate-600">Bebell Digital Solutions</span>.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- LOGIC -->
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        let currentStep = 1;
+        
+        function updateProgress(step) {
+            const width = step * 25;
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            if (progressBar && progressText) {
+                progressBar.style.width = width + '%';
+                progressText.innerText = width + '%';
+            }
+        }
+
+        function showStep(stepNumber) {
+            // Hide all steps
+            for (let i = 1; i <= 4; i++) {
+                const step = document.getElementById(`step-${i}`);
+                const loading = document.getElementById('loading-overlay');
+                
+                if (step) {
+                    step.classList.add('hidden-step');
+                    step.classList.remove('active-step');
+                }
+                if (loading) {
+                    loading.classList.add('hidden-step');
+                }
+            }
+            
+            // Show current step
+            const currentStepElement = document.getElementById(`step-${stepNumber}`);
+            if (currentStepElement) {
+                currentStepElement.classList.remove('hidden-step');
+                currentStepElement.classList.add('active-step');
+                
+                // Add animation class
+                currentStepElement.classList.add('slide-in-right');
+                
+                // Remove animation class after animation completes
+                setTimeout(() => {
+                    currentStepElement.classList.remove('slide-in-right');
+                }, 500);
+            }
+        }
+
+        function nextStep() {
+            if (currentStep === 1) {
+                // Identity Check -> Contact Info
+                currentStep = 2;
+                showStep(currentStep);
+                updateProgress(currentStep);
+                // UX: Focus input
+                setTimeout(() => {
+                    const phoneInput = document.getElementById('phoneInput');
+                    if (phoneInput) phoneInput.focus();
+                }, 100);
+            } else if (currentStep === 2) {
+                // Contact Info -> Stats
+                // Basic validation
+                const phoneInput = document.getElementById('phoneInput');
+                const emailInput = document.getElementById('emailInput');
+                
+                if (phoneInput && phoneInput.value.trim() === '') {
+                    alert('Por favor ingrese su número de WhatsApp');
+                    phoneInput.focus();
+                    return;
+                }
+                
+                if (emailInput && emailInput.value.trim() === '') {
+                    alert('Por favor ingrese su correo electrónico');
+                    emailInput.focus();
+                    return;
+                }
+                
+                currentStep = 3;
+                showStep(currentStep);
+                updateProgress(currentStep);
+                
+                // Initialize slider
+                const slider = document.getElementById('patientInput');
+                if (slider) {
+                    slider.addEventListener('input', function(e) {
+                        updatePatients(e.target.value);
+                    });
+                }
+            }
+        }
+
+        function updatePatients(val) {
+            const display = document.getElementById('patientCountDisplay');
+            if (display) {
+                display.innerText = Number(val).toLocaleString();
+            }
+        }
+
+        function finishStats() {
+            // Stats -> Loading
+            currentStep = 4;
+            
+            // Show loading overlay
+            const loading = document.getElementById('loading-overlay');
+            const step3 = document.getElementById('step-3');
+            
+            if (step3) step3.classList.add('hidden-step');
+            if (loading) {
+                loading.classList.remove('hidden-step');
+                loading.classList.add('active-step');
+            }
+            
+            // Simulate AI work
+            setTimeout(() => {
+                if (loading) loading.classList.add('hidden-step');
+                showStep(currentStep);
+                updateProgress(currentStep);
+                triggerConfetti();
+                // Re-run icons for the newly visible section
+                lucide.createIcons(); 
+            }, 2000);
+        }
+
+        function triggerConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            if (window.confetti && canvas) {
+                const myConfetti = confetti.create(canvas, {
+                    resize: true,
+                    useWorker: true
+                });
+                
+                myConfetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#0d9488', '#9333ea', '#ffffff', '#fcd34d']
+                });
+
+                setTimeout(() => {
+                    myConfetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0 } });
+                    myConfetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 1 } });
+                }, 300);
+            }
+        }
+
+        function playVideo() {
+            const container = document.getElementById('video-container');
+            if (container) {
+                container.innerHTML = `
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1&rel=0" 
+                        title="LegacyMD Founder Message"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    ></iframe>
+                `;
+            }
+        }
+
+        function handleBooking() {
+            const name = "Juan Pérez";
+            const phoneInput = document.getElementById('phoneInput');
+            const emailInput = document.getElementById('emailInput');
+            
+            const phone = phoneInput ? phoneInput.value : '';
+            const email = emailInput ? emailInput.value : '';
+            
+            const baseUrl = "https://cal.com/bebell-digital/demo";
+            const params = new URLSearchParams({
+                name: name,
+                email: email,
+                attendeePhoneNumber: phone,
+                notes: "Generated via LegacyMD Funnel"
+            });
+            
+            window.open(`${baseUrl}?${params.toString()}`, '_blank');
+        }
+
+        // Initialize slider event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('patientInput');
+            if (slider) {
+                slider.addEventListener('input', function(e) {
+                    updatePatients(e.target.value);
+                });
+            }
+            
+            // Initialize step 1 as active
+            showStep(1);
+        });
+    </script>
+</body>
+</html>
