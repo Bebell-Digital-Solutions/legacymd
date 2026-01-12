@@ -1,1 +1,570 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Autoridad Digital - Consultorios Digitales RD</title>
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- jsPDF para la generación de informes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #343A40;
+        }
+
+        .primary-bg { background-color: #324F6F; }
+        .primary-text { color: #324F6F; }
+        .accent-bg { background-color: #2A9D8F; }
+        .accent-text { color: #2A9D8F; }
+        
+        .step-transition {
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #DEE2E6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- El contenido se inyecta dinámicamente vía JavaScript -->
+    </div>
+
+    <script>
+        // --- CONFIGURACIÓN ---
+        const SCRIPT_URL = ""; // URL de Google Apps Script
+        const LOGO_URL = "https://bucket.mlcdn.com/a/3336/3336910/images/10a11da6fc72a49d4c3a2b5e33b04dde8c3ebb60.png";
+
+        const ESPECIALIDADES = [
+            "Cardiología", "Cirugía General", "Cirugía Plástica y Estética", "Dermatología", 
+            "Endocrinología", "Gastroenterología", "Ginecología y Obstetricia", "Medicina Estética",
+            "Medicina Interna", "Neumología", "Neurología", "Nutrición Clínica",
+            "Odontología / Estética Dental", "Oftalmología", "Oncología",
+            "Ortopedia y Traumatología", "Otorrinolaringología", "Pediatría", 
+            "Psiquiatría / Psicología", "Urología", "Otro"
+        ];
+
+        const TIPOS_CENTRO = [
+            "Clínica Privada", "Centro Médico / Torre Profesional", "Consultorio Independiente",
+            "Hospital Público", "Centro de Estética / Spa Médico", "Otro"
+        ];
+
+        const PLANES = {
+            STARTUP: {
+                id: 'STARTUP',
+                nombre: "Plan Start-Up",
+                precio: "$48.77",
+                setup: "USD$ 295.00",
+                descripcion: "Diseñado para médicos autónomos que buscan establecer su presencia digital base con un presupuesto muy limitado. Es el paso inicial para salir del anonimato digital.",
+                caracteristicas: ["Hasta 2 Páginas", "Landing Page (12 bloques)", "1 Dominio + Correo Prof.", "Chat Widget", "Firma Profesional"],
+                missing: ["Recepcionista Online 24/7", "Centro de Comunicación Omnicanal", "Sistema de Reservas Automatizado", "SEO para posicionamiento local"],
+                colorClass: "bg-blue-50",
+                textClass: "text-blue-700",
+                icon: "rocket"
+            },
+            BASICO: {
+                id: 'BASICO',
+                nombre: "Plan Básico",
+                precio: "$78.77",
+                setup: "USD$ 450.00",
+                descripcion: "Para clínicas y consultorios que requieren una solución más robusta y profesional. Ideal para quienes ya entienden que lo básico no es suficiente.",
+                caracteristicas: ["Hasta 8 Páginas", "Sistema de Reservas", "Integración de Calendario", "SEO Básico", "Notificaciones Auto."],
+                missing: ["Asistente Inteligente AI (🤖)", "Reportes diarios de Leads", "Sistema de Email Marketing Pro", "Blog Mensual de Autoridad"],
+                colorClass: "bg-teal-50",
+                textClass: "text-teal-700",
+                icon: "shield-check"
+            },
+            AVANZADO: {
+                id: 'AVANZADO',
+                nombre: "Plan Avanzado",
+                precio: "$150.77",
+                setup: "USD$ 575.00",
+                descripcion: "Plataforma digital completa para clínicas que necesitan autoridad total y dominio absoluto del mercado digital.",
+                caracteristicas: ["Páginas ilimitadas", "Asistente Inteligente AI", "Email Marketing", "Blog Mensual", "SEO Avanzado"],
+                missing: ["Escalado masivo mediante Paid Media (Próximo paso)", "Sistemas CRM Personalizados"],
+                colorClass: "bg-indigo-50",
+                textClass: "text-indigo-700",
+                icon: "zap"
+            }
+        };
+
+        // --- ESTADO GLOBAL ---
+        let state = {
+            step: 0,
+            loading: false,
+            formData: {
+                nombre: '',
+                marcaNombre: '',
+                especialidad: '',
+                experiencia: '',
+                tipoCentro: '',
+                direccion: '',
+                horarioTrabajo: '',
+                tieneWeb: 'No',
+                googleBusiness: 'No tengo perfil',
+                redesActivas: [],
+                objetivo: '',
+                casos: ['', ''],
+                horasDigitalSemanales: '',
+                presupuesto: '',
+                email: '',
+                telefono: ''
+            },
+            diagnostico: null
+        };
+
+        // --- LÓGICA DE NAVEGACIÓN Y RENDERIZADO ---
+
+        function updateState(newData) {
+            state.formData = { ...state.formData, ...newData };
+        }
+
+        function toggleSocial(social) {
+            const index = state.formData.redesActivas.indexOf(social);
+            if (index === -1) {
+                state.formData.redesActivas.push(social);
+            } else {
+                state.formData.redesActivas.splice(index, 1);
+            }
+            render();
+        }
+
+        function nextStep() {
+            state.step++;
+            render();
+        }
+
+        function prevStep() {
+            state.step--;
+            render();
+        }
+
+        function render() {
+            const app = document.getElementById('app');
+            
+            if (state.step === 0) {
+                app.innerHTML = renderLanding();
+            } else if (state.step >= 1 && state.step <= 5) {
+                app.innerHTML = renderFormStep();
+            } else if (state.step === 6) {
+                app.innerHTML = renderResults();
+            }
+            
+            lucide.createIcons();
+        }
+
+        // --- PLANTILLAS DE UI ---
+
+        function renderLanding() {
+            return `
+                <div class="flex-1 flex items-center justify-center p-4 text-center">
+                    <div class="max-w-3xl step-transition flex flex-col items-center">
+                        <div class="mb-10 w-48 h-48 md:w-64 md:h-64">
+                            <img src="${LOGO_URL}" alt="Logo Consultorios Digitales" class="w-full h-full object-contain">
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold primary-text mb-6 leading-tight tracking-tight">
+                            Su Consultorio <span class="accent-text">Digital</span> Profesional
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-xl mx-auto">
+                            Inicie su proceso de transformación hoy. Complete este diagnóstico para recibir su mapa de autoridad y la propuesta ideal para su práctica médica en RD.
+                        </p>
+                        <button onclick="nextStep()" class="primary-bg text-white px-12 py-5 rounded-2xl text-xl font-bold flex items-center hover:scale-105 transition-transform shadow-2xl">
+                            Iniciar Onboarding <i data-lucide="chevron-right" class="ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFormStep() {
+            let content = '';
+            let title = '';
+
+            switch(state.step) {
+                case 1:
+                    title = "Identidad del Especialista";
+                    content = `
+                        <div class="space-y-5">
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Nombre Completo</label>
+                                <input type="text" oninput="updateState({nombre: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="Dr./Dra. Nombre Apellido" value="${state.formData.nombre}">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Nombre de Marca / Clínica</label>
+                                <input type="text" oninput="updateState({marcaNombre: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="Ej: Clínica Dental Elite" value="${state.formData.marcaNombre}">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Especialidad Principal</label>
+                                <select onchange="updateState({especialidad: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 outline-none">
+                                    <option value="">Seleccione...</option>
+                                    ${ESPECIALIDADES.map(e => `<option value="${e}" ${state.formData.especialidad === e ? 'selected' : ''}>${e}</option>`).join('')}
+                                </select>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 2:
+                    title = "Ubicación y Operación";
+                    content = `
+                        <div class="space-y-5">
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="building-2" class="w-3"></i> Lugar de Consulta</label>
+                                <select onchange="updateState({tipoCentro: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 outline-none">
+                                    <option value="">Seleccione...</option>
+                                    ${TIPOS_CENTRO.map(t => `<option value="${t}" ${state.formData.tipoCentro === t ? 'selected' : ''}>${t}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="map-pin" class="w-3"></i> Dirección Exacta</label>
+                                <input type="text" oninput="updateState({direccion: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="Calle, Edificio, Suite" value="${state.formData.direccion}">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="clock" class="w-3"></i> Horarios de Atención</label>
+                                <input type="text" oninput="updateState({horarioTrabajo: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="Ej: Lun-Vie 8-6, Sáb 9-1" value="${state.formData.horarioTrabajo}">
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 3:
+                    title = "Estado Digital Actual";
+                    content = `
+                        <div class="space-y-6">
+                            <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100">
+                                <p class="font-bold primary-text mb-3 flex items-center gap-2"><i data-lucide="search" class="w-4"></i> Perfil de Google Business</p>
+                                <div class="grid grid-cols-1 gap-2">
+                                    ${['Sí, optimizado', 'Sí, pero abandonado', 'No tengo perfil'].map(opt => `
+                                        <label class="flex items-center p-3 border rounded-xl bg-white cursor-pointer hover:bg-gray-50">
+                                            <input type="radio" name="google" onchange="updateState({googleBusiness: '${opt}'})" ${state.formData.googleBusiness === opt ? 'checked' : ''} class="w-4 h-4 text-[#324F6F]">
+                                            <span class="ml-3 text-sm font-medium text-gray-600">${opt}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-700 mb-3 flex items-center gap-2"><i data-lucide="globe" class="w-4"></i> ¿Tiene sitio web propio?</p>
+                                <div class="flex gap-6">
+                                    ${['Sí', 'No'].map(opt => `
+                                        <label class="flex items-center cursor-pointer group">
+                                            <input type="radio" name="web" onchange="updateState({tieneWeb: '${opt}'})" ${state.formData.tieneWeb === opt ? 'checked' : ''} class="w-5 h-5 text-[#324F6F]">
+                                            <span class="ml-2 font-medium text-gray-600 group-hover:text-[#324F6F]">${opt}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-700 mb-3">Redes Sociales Profesionales</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    ${['Instagram', 'Facebook', 'LinkedIn', 'YouTube', 'TikTok'].map(s => `
+                                        <label onclick="toggleSocial('${s}')" class="flex items-center p-3 border rounded-xl cursor-pointer transition-all ${state.formData.redesActivas.includes(s) ? 'border-[#324F6F] bg-blue-50 shadow-sm' : 'border-gray-100'}">
+                                            <div class="w-4 h-4 rounded border flex items-center justify-center ${state.formData.redesActivas.includes(s) ? 'bg-[#324F6F] border-[#324F6F]' : 'bg-white border-gray-300'}">
+                                                ${state.formData.redesActivas.includes(s) ? '<i data-lucide="check" class="w-3 h-3 text-white"></i>' : ''}
+                                            </div>
+                                            <span class="ml-3 font-semibold text-gray-700 text-sm">${s}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 4:
+                    title = "Visión y Recursos";
+                    content = `
+                        <div class="space-y-5">
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Objetivo Estratégico</label>
+                                <select onchange="updateState({objetivo: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 outline-none">
+                                    <option value="">Seleccione...</option>
+                                    <option value="Más pacientes" ${state.formData.objetivo === 'Más pacientes' ? 'selected' : ''}>Atraer más flujo de pacientes</option>
+                                    <option value="Autoridad" ${state.formData.objetivo === 'Autoridad' ? 'selected' : ''}>Consolidar autoridad en RD</option>
+                                    <option value="Procedimientos" ${state.formData.objetivo === 'Procedimientos' ? 'selected' : ''}>Impulsar procedimientos estrella</option>
+                                </select>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100">
+                                <label class="text-xs font-bold text-blue-700 uppercase tracking-widest flex items-center gap-2"><i data-lucide="dollar-sign" class="w-3"></i> Inversión Mensual Máxima</label>
+                                <select onchange="updateState({presupuesto: this.value})" class="mt-2 block w-full rounded-xl border-blue-200 p-4 bg-white outline-none">
+                                    <option value="">Seleccione monto mensual...</option>
+                                    <option value="Bajo" ${state.formData.presupuesto === 'Bajo' ? 'selected' : ''}>RD$ 15,000 - 30,000</option>
+                                    <option value="Medio" ${state.formData.presupuesto === 'Medio' ? 'selected' : ''}>RD$ 30,000 - 60,000</option>
+                                    <option value="Alto" ${state.formData.presupuesto === 'Alto' ? 'selected' : ''}>RD$ 60,000 - 100,000</option>
+                                    <option value="Elite" ${state.formData.presupuesto === 'Elite' ? 'selected' : ''}>Más de RD$ 100,000</option>
+                                </select>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 5:
+                    title = "Finalizar Registro";
+                    content = `
+                        <div class="space-y-5">
+                            <p class="text-sm text-gray-500 font-medium">Sus respuestas están siendo enviadas a nuestro equipo de análisis para generar su propuesta final.</p>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">Email Corporativo</label>
+                                <input type="email" oninput="updateState({email: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="doctor@ejemplo.com" value="${state.formData.email}">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">WhatsApp Directo</label>
+                                <input type="tel" oninput="updateState({telefono: this.value})" class="mt-2 block w-full rounded-xl border border-gray-100 p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none" placeholder="809-000-0000" value="${state.formData.telefono}">
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+
+            return `
+                <div class="flex-1 py-12 px-4 flex items-center justify-center">
+                    <div class="max-w-2xl w-full bg-white p-8 rounded-3xl shadow-xl border border-gray-50 step-transition">
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full mb-8 overflow-hidden">
+                            <div class="accent-bg h-full transition-all duration-500" style="width: ${(state.step / 6) * 100}%"></div>
+                        </div>
+                        <h2 class="text-2xl font-bold primary-text mb-6">${title}</h2>
+                        ${content}
+                        <div class="flex justify-between mt-10">
+                            <button onclick="prevStep()" class="flex items-center text-gray-400 hover:primary-text font-medium transition-colors">
+                                <i data-lucide="chevron-left" class="w-5"></i> Atrás
+                            </button>
+                            <button onclick="${state.step === 5 ? 'handleSubmit()' : 'nextStep()'}" class="ml-auto px-10 py-3 rounded-xl font-bold flex items-center gap-2 primary-bg text-white hover:opacity-90 shadow-lg">
+                                ${state.loading ? 'Enviando...' : (state.step === 5 ? 'Generar Mi Onboarding' : 'Siguiente')} 
+                                ${!state.loading && state.step < 5 ? '<i data-lucide="chevron-right" class="w-5"></i>' : ''}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderResults() {
+            const plan = state.diagnostico.plan;
+            return `
+                <div class="max-w-5xl mx-auto py-12 px-4 step-transition space-y-8">
+                    <div class="bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-50 text-center">
+                        <div class="inline-block p-4 bg-green-50 rounded-full mb-6 accent-text">
+                            <i data-lucide="check-circle-2" class="w-12 h-12"></i>
+                        </div>
+                        <h2 class="text-4xl font-black primary-text mb-4 tracking-tight">¡Onboarding Completado!</h2>
+                        <p class="text-gray-500 font-medium">Dr./Dra. ${state.formData.nombre}, hemos consolidado su información de autoridad digital.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <div class="bg-white rounded-[2rem] p-8 shadow-lg border border-gray-50">
+                                <h3 class="text-xl font-bold primary-text mb-6 flex items-center gap-2 border-b pb-4 border-gray-100">
+                                    <i data-lucide="file-text" class="w-5 accent-text"></i> Ficha de Onboarding
+                                </h3>
+                                <div class="space-y-4 custom-scrollbar overflow-y-auto max-h-[600px] pr-2">
+                                    ${renderDataField("Nombre / Clínica", state.formData.marcaNombre || 'Personal')}
+                                    ${renderDataField("Especialidad", state.formData.especialidad)}
+                                    ${renderDataField("Tipo de Centro", state.formData.tipoCentro)}
+                                    ${renderDataField("Ubicación", state.formData.direccion)}
+                                    ${renderDataField("Horario", state.formData.horarioTrabajo)}
+                                    ${renderDataField("Tiene Web", state.formData.tieneWeb)}
+                                    ${renderDataField("Google Business", state.formData.googleBusiness)}
+                                    ${renderDataField("Redes Activas", state.formData.redesActivas.join(', ') || 'Ninguna')}
+                                    ${renderDataField("Objetivo", state.formData.objetivo)}
+                                    ${renderDataField("Inversión Máxima", state.formData.presupuesto)}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 space-y-6">
+                            <div class="rounded-[2rem] p-10 shadow-xl border border-gray-50 relative overflow-hidden ${plan.colorClass}">
+                                <div class="absolute top-0 right-0 p-8 opacity-5 transform scale-[2]">
+                                    <i data-lucide="${plan.icon}" class="w-24 h-24"></i>
+                                </div>
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="p-3 bg-white rounded-2xl shadow-sm">
+                                        <i data-lucide="${plan.icon}" class="w-8 h-8 ${plan.textClass}"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-black text-gray-400 uppercase tracking-widest">Plan Recomendado</span>
+                                        <h4 class="text-3xl font-black ${plan.textClass}">${plan.nombre}</h4>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 font-medium mb-8 max-w-lg leading-relaxed">${plan.descripcion}</p>
+                                
+                                <div class="mb-8">
+                                    <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Lo que usted RECIBE:</p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        ${plan.caracteristicas.map(c => `
+                                            <div class="flex items-center gap-3 text-sm font-bold text-gray-700">
+                                                <div class="w-2 h-2 rounded-full ${plan.textClass.replace('text', 'bg')}"></div>
+                                                ${c}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+
+                                <div class="mb-10 p-6 bg-red-50 rounded-2xl border border-red-100">
+                                    <p class="text-xs font-black text-red-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                        <i data-lucide="alert-triangle" class="w-3"></i> Lo que su consultorio está DEJANDO DE PERCIBIR:
+                                    </p>
+                                    <div class="space-y-2">
+                                        ${plan.missing.map(m => `
+                                            <div class="flex items-center gap-3 text-xs font-bold text-red-600 opacity-80">
+                                                <i data-lucide="x" class="w-3"></i> ${m}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <p class="mt-4 text-[10px] text-red-400 italic leading-tight">* Estas herramientas separan a los líderes de los consultorios convencionales.</p>
+                                </div>
+
+                                <div class="flex items-baseline gap-2 mb-10 border-t border-gray-200 pt-6 border-opacity-30">
+                                    <span class="text-4xl font-black ${plan.textClass}">${plan.precio}</span>
+                                    <span class="text-gray-400 font-bold">/ Mes</span>
+                                    <span class="text-xs text-gray-400 ml-4 font-medium uppercase tracking-widest">(Setup: ${plan.setup})</span>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <button onclick="generatePDF()" class="flex-1 bg-white primary-text py-4 rounded-2xl font-bold flex items-center justify-center gap-2 border border-gray-100 hover:shadow-lg transition-all">
+                                        <i data-lucide="download" class="w-5"></i> Guardar Ficha (PDF)
+                                    </button>
+                                    <button onclick="openModal()" class="flex-1 primary-bg text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:opacity-95 shadow-lg">
+                                        <i data-lucide="send" class="w-5"></i> Solicitar Asesoría de Up-Tier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal de Asesoría -->
+                <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+                    <div class="bg-white rounded-[2.5rem] p-10 max-w-lg w-full shadow-2xl space-y-6 step-transition">
+                        <h3 class="text-3xl font-bold primary-text">Asesoría de Implementación</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Su perfil ha sido pre-calificado. ¿Desea que revisemos sus datos para una asesoría de 15 minutos sobre cómo integrar la <strong>Recepcionista Online 24/7</strong> y mejorar su flujo de pacientes?
+                        </p>
+                        <textarea id="comment" class="w-full border-gray-200 rounded-2xl p-4 bg-gray-50 focus:ring-2 focus:ring-[#324F6F] outline-none text-sm" rows="3" placeholder="Ej: Me gustaría enfocar mi sitio web en pacientes internacionales..."></textarea>
+                        <button onclick="confirmConsultation()" id="btn-modal" class="w-full accent-bg text-white py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all">
+                            Confirmar y Agendar Llamada
+                        </button>
+                        <button onclick="closeModal()" class="w-full text-gray-400 font-bold hover:text-gray-600 transition-colors">Volver a mis resultados</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDataField(label, value) {
+            return `
+                <div>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">${label}</p>
+                    <p class="text-sm font-bold text-gray-700 leading-tight">${value || 'No especificado'}</p>
+                </div>
+            `;
+        }
+
+        // --- LÓGICA DE NEGOCIO ---
+
+        async function handleSubmit() {
+            state.loading = true;
+            render();
+
+            // Matching del plan
+            let planRecomendado = PLANES.STARTUP;
+            if (state.formData.presupuesto === 'Elite' || state.formData.presupuesto === 'Alto') {
+                planRecomendado = PLANES.AVANZADO;
+            } else if (state.formData.tipoCentro === 'Clínica Privada' || state.formData.presupuesto === 'Medio') {
+                planRecomendado = PLANES.BASICO;
+            }
+
+            state.diagnostico = { plan: planRecomendado };
+
+            // Envío a Sheets (Opcional)
+            if (SCRIPT_URL) {
+                try {
+                    await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: JSON.stringify({ ...state.formData, plan: planRecomendado.nombre })
+                    });
+                } catch (e) { console.error(e); }
+            }
+
+            setTimeout(() => {
+                state.loading = false;
+                state.step = 6;
+                render();
+            }, 1500);
+        }
+
+        function openModal() { document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal').classList.add('flex'); }
+        function closeModal() { document.getElementById('modal').classList.add('hidden'); document.getElementById('modal').classList.remove('flex'); }
+        
+        function confirmConsultation() {
+            const btn = document.getElementById('btn-modal');
+            btn.innerHTML = '✓ Solicitud Recibida';
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            setTimeout(() => { closeModal(); }, 2000);
+        }
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const plan = state.diagnostico.plan;
+
+            doc.setFillColor(50, 79, 111);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(20);
+            doc.text("FICHA DE ONBOARDING DIGITAL", 105, 25, { align: 'center' });
+
+            doc.setTextColor(50, 79, 111);
+            doc.setFontSize(14);
+            doc.text(`Perfil: Dr./Dra. ${state.formData.nombre}`, 20, 55);
+            
+            doc.setDrawColor(200, 200, 200);
+            doc.line(20, 65, 190, 65);
+
+            doc.setFontSize(9);
+            doc.setTextColor(0, 0, 0);
+            doc.text([
+                `Nombre / Marca: ${state.formData.marcaNombre || 'Identidad Personal'}`,
+                `Especialidad: ${state.formData.especialidad}`,
+                `Ubicación: ${state.formData.direccion}`,
+                `Horario: ${state.formData.horarioTrabajo}`,
+                `Web Actual: ${state.formData.tieneWeb}`,
+                `Google Business: ${state.formData.googleBusiness}`,
+                `Redes Activas: ${state.formData.redesActivas.join(', ') || 'Ninguna'}`,
+                `Inversión Máxima Mensual: ${state.formData.presupuesto}`,
+                "",
+                "PLAN RECOMENDADO:",
+                `Nombre: ${plan.nombre}`,
+                `Inversión Mensual: ${plan.precio} (Setup: ${plan.setup})`,
+                `Resumen: ${plan.descripcion}`,
+                "",
+                "LO QUE RECIBE:",
+                ...plan.caracteristicas.map(c => `- ${c}`),
+                "",
+                "LO QUE ESTÁ DEJANDO DE PERCIBIR:",
+                ...plan.missing.map(m => `x ${m}`)
+            ], 20, 75);
+
+            doc.text("Generado por Consultorios Digitales RD", 105, 280, { align: 'center' });
+            doc.save(`Ficha-Onboarding-${state.formData.nombre.replace(/\s+/g, '-')}.pdf`);
+        }
+
+        // Inicialización
+        window.onload = render;
+
+    </script>
+</body>
+</html>
+
