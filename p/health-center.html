@@ -292,16 +292,19 @@
       cursor: pointer;
     }
 
-    .service__card span {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 30px 30px;
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      background-color: var(--primary-color-light);
-      border-radius: 100%;
-      transition: 0.3s;
-    }
+.service__card span {
+  display: inline-flex; /* Use flex for better centering */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 80px; /* Set one dimension */
+  aspect-ratio: 1 / 1; /* Forces equal width and height */
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  background-color: var(--primary-color-light);
+  border-radius: 50%; /* 50% is standard for circles */
+  transition: 0.3s;
+}
 
     .service__card h4 {
       margin-bottom: 0.5rem;
