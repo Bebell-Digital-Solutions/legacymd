@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegacyMD - Descargo de Responsabilidad</title>
+    
+    <!-- === OPEN GRAPH / FACEBOOK === -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://legacymd.online/disclaimer">
+    <meta property="og:title" content="LegacyMD | Descargo de Responsabilidad">
+    <meta property="og:description" content="Términos y condiciones, y descargo de responsabilidad sobre el uso de los servicios de LegacyMD.">
+    <meta id="og-image" property="og:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="LegacyMD">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- === TARJETA DE TWITTER === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://legacymd.online/disclaimer">
+    <meta name="twitter:title" content="LegacyMD | Descargo de Responsabilidad">
+    <meta name="twitter:description" content="Términos y condiciones, y descargo de responsabilidad sobre el uso de los servicios de LegacyMD.">
+    <meta id="twitter-image" name="twitter:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+    <meta name="twitter:creator" content="@LegacyMD">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- favicon -->    
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+
+    <style>
+        body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        
+        /* Animation Classes */
+        .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
+        .slide-up { animation: slideUp 0.5s ease-out forwards; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Legal Content Styling */
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b; /* slate-800 */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legal-content p {
+            color: #64748b; /* slate-500 */
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .legal-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden selection:bg-teal-100">
+
+    <!-- Background Accents -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-3/4 h-screen bg-gradient-to-l from-teal-50/50 to-transparent"></div>
+        <div class="absolute -top-20 -right-20 w-[600px] h-[600px] bg-purple-100/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-100/40 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="relative z-20 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="https://elnegocio.digital/consultorio-digital" class="flex items-center gap-2">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD Logo" class="w-10 h-10 object-contain" />
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Legacy<span class="text-teal-600">MD</span></span>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-2 text-xs font-semibold text-teal-700 bg-teal-50 px-4 py-2 rounded-full border border-teal-100">
+            <i data-lucide="shield-alert" class="w-3 h-3"></i>
+            Información Legal
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- Footer (Responsive Adjustments Applied) -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Main Grid: Stacked on mobile, 12-columns on tablet/desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 lg:gap-8 mb-12">
+                
+                <!-- Left Column (Logo & Description) -->
+                <div class="sm:col-span-12 lg:col-span-3 mb-6 lg:mb-0">
+                    <div class="flex items-center gap-2 mb-4">
+                        <a href="https://elnegocio.digital/consultorio-digital" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/80a14e0eaa1e329f06524198044d53e3dcc75d28.png" alt="LegacyMD Logo" class="w-8 h-8 object-contain" />
+                            <span class="font-bold text-slate-800 text-lg tracking-tight">HechoEn<span class="text-teal-600">RD</span></span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
+                        Transformando la Presencia Digital de los profesionales de la salud en República Dominicana.🇩🇴
+                    </p>
+                </div>
+
+                <!-- Center Columns (Footer Menu Links - forms first 3 cols on tablet) -->
+                <div class="sm:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4">Plataforma</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a href="YOUR_HOME_URL" class="hover:text-teal-600 transition-colors">Página Inicio</a></li>
+                            <li><a href="YOUR_SERVICES_URL" class="hover:text-teal-600 transition-colors">Servicios</a></li>
+                            <li><a href="YOUR_PLANS_URL" class="hover:text-teal-600 transition-colors">Planes</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4">Compañía</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a href="YOUR_ABOUT_URL" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                            <li><a href="YOUR_CONTACT_URL" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                            <li><a href="YOUR_HELP_URL" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4">Legal</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a href="YOUR_TERMS_URL" class="hover:text-teal-600 transition-colors">Términos</a></li>
+                            <li><a href="YOUR_PRIVACY_URL" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                            <li><a href="YOUR_DISCLAIMER_URL" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column (Support Card - Inline on tablet, pushed bottom on mobile) -->
+                <div class="sm:col-span-5 lg:col-span-4 mt-6 sm:mt-0">
+                    <div class="bg-white rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center h-full min-h-[190px] shadow-lg border border-teal-700">
+                        <div class="relative z-10 w-[75%] sm:w-3/4 lg:w-2/3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h4 class="text-slate-900 font-bold text-xl">Soporte Online</h4>
+                                <span class="bg-teal-500 text-white text-xs font-bold px-2 py-1 rounded-md">24/7</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 leading-snug">Contáctenos si tiene alguna pregunta. Nuestro equipo de soporte está aquí para atenderte.</p>
+                            <button onclick="window.open('https://wa.me/18296203970?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estoy%20interesado%2Fa%20en%20los%20servicios%20de%20LegacyMD.', '_blank')" class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl flex items-center gap-2 transition-colors border border-slate-700 shadow-sm w-fit group">
+                                <i data-lucide="headphones" class="w-4 h-4 text-slate-300 group-hover:text-white transition-colors"></i>
+                                Escríbanos
+                            </button>
+                        </div>
+                        <img 
+                            src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/legacymd-operator.webp" 
+                            alt="Soporte 24/7" 
+                            class="absolute bottom-0 right-0 w-32 md:w-36 lg:w-40 object-contain z-0 pointer-events-none" 
+                        />
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>LegacyMD © 2024. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    Desarrollado con <span class="text-green-500">💚</span> por <span class="font-bold text-slate-600">Bebell Digital Solutions</span>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    
+    <!-- BACK TO TOP ICON-->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        const backToTop = document.createElement("div");
+        backToTop.id = "back-to-top";
+        backToTop.style.position = "fixed";
+        backToTop.style.bottom = "20px";
+        backToTop.style.right = "20px";
+        backToTop.style.display = "none";
+        backToTop.style.cursor = "pointer";
+        backToTop.style.zIndex = "9999";
+        const backToTopImg = document.createElement("img");
+        backToTopImg.src = "https://bucket.mlcdn.com/a/3336/3336910/images/3ace734af12df1fd752b6855e73fba6a96451ae3.png";
+        backToTopImg.alt = "Volver arriba";
+        backToTopImg.style.width = "50px";
+        backToTopImg.style.height = "50px";
+        backToTop.appendChild(backToTopImg);
+        document.body.appendChild(backToTop);
+        
+        window.addEventListener("scroll", function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+        
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+    </script>
+    <!-- END BACK TO TOP ICON-->
+
+    <!-- HelpDesk Widget -->
+    <script>(function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://api.helpdesk.icu/widget2/load?id=d6457627-949b-3e72-affe-826af559e484&r=' + encodeURIComponent(window.location);
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'anw2-sdk-J3ZF1puUcj6v_oJq9VnkhA'));</script>
+
+</body>
+</html>
