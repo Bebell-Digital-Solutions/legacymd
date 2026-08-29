@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Consultorio Digital | Vende tus Consultas por Internet | Bebell</title>
+    <meta name="description" content="Desarrolla tu Consultorio Digital con Bebell Digital Solutions. Solución premium para médicos y profesionales: vende servicios, gestiona citas, automatiza mensajes y capta pacientes online.">
+    <meta name="keywords" content="consultorio digital, software para medicos, agenda medica online, marketing medico, clinica virtual, bebell digital solutions, republica dominicana">
+    <meta name="author" content="Bebell Digital Solutions">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elnegocio.digital/consultorio-digital">
+    <meta property="og:title" content="Desarrolla Tu Consultorio Digital | Autoridad en Línea">
+    <meta property="og:description" content="Gestiona reservas, capta pacientes y vende tus servicios profesionales por internet con nuestra plataforma móvil automatizada.">
+    <meta property="og:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; /* slate-50 */
+        }
+        
+        /* Prevent scroll jank during GSAP loads */
+        .invisible-until-scroll { visibility: hidden; }
+
+        /* MacBook CSS */
+        .macbook-wrapper {
+            position: relative;
+            background: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .macbook-wrapper .macbook {
+            padding: 4% 6%;
+            margin: 0 auto;
+            max-width: 100%;
+            background: transparent;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .screen {
+            background: #000;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            margin: 0 auto;
+            position: relative;
+            width: 80%;
+        }
+
+        .macbook-wrapper .screen:before {
+            border: 2px solid #cacacc;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+            content: "";
+            display: block;
+            padding-top: 67%;
+        }
+
+        .macbook-wrapper .viewport {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 4.3% 3.2%;
+            background: #F2F1FB;
+            border-radius: 4px;
+            transition: background-position 20s ease;
+            background-position: 0 0;
+            background-size: 100% auto;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .macbook-wrapper .macbook:hover .viewport {
+            background-position: 0 100%;
+        }
+
+        .macbook-wrapper .base {
+            position: relative;
+            width: 100%;
+            background: #F2F1FB;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .base:before {
+            content: "";
+            display: block;
+            padding-top: 3.3%;
+            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+            border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+        }
+
+        .macbook-wrapper .notch {
+            background: #ddd;
+            border-radius: 0 0 7% 7% / 0 0 95% 95%;
+            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -3.5%;
+            z-index: 2;
+            position: relative;
+            width: 14%;
+        }
+
+        .macbook-wrapper .notch:before {
+            content: "";
+            display: block;
+            padding-top: 10%;
+        }
+
+        .macbook-wrapper .macbook .viewport:after {
+            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+            bottom: 0;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* Custom Gradients & Utilities */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #0d9488, #9333ea); /* teal-600 to purple-600 */
+        }
+        
+        .plan-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.15); /* teal shadow */
+        }
+        
+        /* Accordion CSS for FAQ */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+            padding-top: 0.5rem;
+        }
+
+        /* ==========================================================
+           Animated Border Properties 
+           (Replaces button borders for desired glow effect)
+           ========================================================== */
+        @property --a {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+        }
+
+        @keyframes spin {
+            0% { --a: 0deg; }
+            100% { --a: 360deg; }
+        }
+
+        .animated-border-wrapper {
+            position: relative;
+            padding: 2px; /* Border thickness */
+            border-radius: 0.875rem; /* Matches Tailwind's rounded-xl + padding */
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.3) 90%, 
+                rgba(80, 211, 204, 0.9) 98%, 
+                #50d3cc 100%
+            );
+            animation: spin 3s linear infinite;
+            z-index: 1;
+        }
+
+        .animated-border-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px; /* Glow spread */
+            border-radius: 1rem;
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.1) 90%, 
+                rgba(80, 211, 204, 0.6) 98%,
+                rgba(80, 211, 204, 0.8) 100%
+            );
+            filter: blur(8px);
+            z-index: -1;
+            animation: spin 3s linear infinite;
+        }
+    </style>
+</head>
+
+
+  
+<body class="text-slate-800 overflow-x-hidden selection:bg-teal-200 selection:text-teal-900 relative">
+
+    <!-- Background Accents (Ambient glow) -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-3/4 h-screen bg-gradient-to-l from-teal-50/70 to-transparent"></div>
+        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-purple-200/30 rounded-full blur-[100px]"></div>
+        <div class="absolute top-[40%] -left-40 w-[500px] h-[500px] bg-teal-200/30 rounded-full blur-[100px]"></div>
+    </div>
+
+
+
+
+
+
+
+
+  
+
+    <nav class="relative z-50 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center bg-transparent">
+        <div class="flex items-center gap-2">
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD Logo" class="w-10 h-10 object-contain" />
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Legacy<span class="text-teal-600">MD</span></span>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+            <a href="#caracteristicas" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Características</a>
+            <a href="#planes" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Planes</a>
+            <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="text-sm font-bold bg-teal-700 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 hover:shadow-lg transition-all shadow-slate-300">
+                Agendar Demo
+            </button>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+  
+
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 lg:pt-20 lg:pb-32">
+        <div class="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-0 items-center">
+            
+            <!-- Hero Copy (Left) -->
+            <div class="hero-content text-center lg:text-left lg:pr-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-100/50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span>
+                    La evolución de tu práctica médica
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                    ¿Quieres vender tus consultas por <span class="text-gradient">Internet?</span>
+                </h1>
+                
+                <p class="text-lg text-slate-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Desarrolla tu <strong class="text-slate-700">Consultorio Digital</strong>. Una solución móvil para vender, promocionar, gestionar reservas y captar pacientes de manera remota. Posiciona tu Marca en Google y Redes Sociales HOY mismo.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <a href="#planes" class="w-full sm:w-auto px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-lg shadow-teal-200 transition-all flex items-center justify-center gap-2 group">
+                        Planes y Precios
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    
+                    <!-- BUTTON 1: Animated Border in Hero -->
+                    <div class="animated-border-wrapper w-full sm:w-auto inline-flex">
+                        <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-teal-400 font-bold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 relative z-10">
+                            <i data-lucide="calendar" class="w-5 h-5 text-purple-500"></i>
+                            Agendar Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-sm font-medium text-slate-500">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                        Sitio Web Propio
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                        Agenda Automatizada
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Interactive Laptop (Right) -->
+            <div class="hero-visual relative w-full pt-10 lg:pt-0 lg:scale-[1.12] lg:-ml-6">
+                <!-- Decorative element behind laptop -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-teal-100 to-purple-100 rounded-full opacity-30 blur-2xl -z-10 pointer-events-none"></div>
+                
+                <div class="macbook-wrapper">
+                    <div class="macbook drop-shadow-2xl">
+                        <div class="screen">
+                            <div class="viewport" style="background-image: url('https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Portafolio/Consultorios%20Digitales/Macbook-Air-bebell-digital-solutions.github.io%20(6).png')">
+                            </div>
+                        </div>
+                        <div class="base"></div>
+                        <div class="notch"></div>
+                    </div>
+                    
+                    <!-- User Instruction -->
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 w-full">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest animate-pulse">
+                            Desliza el cursor sobre la pantalla
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+
+  
+
+     <section class="relative z-20 py-12 shadow-md" style="background-color: #0d9488;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/30">
+                <!-- Stat 1 -->
+                <div class="stat-item pt-4 md:pt-0">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 flex justify-center items-center drop-shadow-sm">
+                        <span class="counter" data-target="5">0</span><span class="text-3xl md:text-4xl font-bold opacity-90">/5</span>
+                    </div>
+                    <p class="text-white font-bold uppercase tracking-widest text-sm drop-shadow-sm">Calificaciones</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="stat-item pt-8 md:pt-0">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 flex justify-center items-center drop-shadow-sm">
+                        <span class="counter" data-target="48">0</span>
+                    </div>
+                    <p class="text-white font-bold uppercase tracking-widest text-sm drop-shadow-sm">Perfiles Lanzados</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="stat-item pt-8 md:pt-0">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-2 flex justify-center items-center drop-shadow-sm">
+                        <span class="counter" data-target="100">0</span><span class="text-3xl md:text-4xl font-bold opacity-90">%</span>
+                    </div>
+                    <p class="text-white font-bold uppercase tracking-widest text-sm drop-shadow-sm">Satisfacción Garantizada</p>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+
+
+
+
+
+
+
+  
+
+    <section id="caracteristicas" class="bg-white border-y border-slate-200 py-20 lg:py-28 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-fade-up">
+                <h2 class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-3">Tener presencia en internet es una necesidad</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Todo lo que necesitas para tu práctica digital</h3>
+                <p class="text-slate-500 mt-4">Un consultorio digital no es solo una web, es un entorno profesional para gestionar tu atención, automatizar procesos y proyectar autoridad.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 stagger-grid">
+                
+                <!-- Feature 1 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-teal-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-teal-100 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 relative z-10 text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i data-lucide="smartphone" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3 relative z-10">Movilidad Total</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed relative z-10">Gestiona tu negocio estés donde estés. Compatible 100% con dispositivos móviles Android y iOS para ti y tus pacientes.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-purple-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 relative z-10 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i data-lucide="globe-2" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3 relative z-10">Mayor Alcance</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed relative z-10">Explora y conquista el internet. Vende e integra múltiples canales como Instagram, Facebook, TikTok y mejora tu SEO en Google.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 relative z-10 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="calendar-check" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3 relative z-10">Automatización</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed relative z-10">Enfócate en la calidad de tus consultas. Deja la gestión de reservas, recordatorios y captación de leads a tu plataforma digital.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-orange-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <i data-lucide="users" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Captación de Leads</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Convierte visitantes en pacientes. Herramientas integradas para generar prospectos, formularios personalizados y estrategias de fidelización.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-pink-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <i data-lucide="bot" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Recepcionista 24/7</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Chatbots inteligentes y notificaciones automáticas. Mantén una comunicación fluida y constante sin esfuerzo manual adicional.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="stagger-item group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-emerald-100 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Portal de Cliente</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Acceso a un panel exclusivo para gestionar operaciones, ver analíticas, dar seguimiento a pacientes y descargar reportes de tu negocio.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+  
+
+    <section id="planes" class="py-20 lg:py-28 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Planes de Desarrollo Web</h2>
+                <p class="text-slate-500">Elige el plan que mejor se adapte a tu nivel de práctica profesional. Todos incluyen hosting, dominio y soporte premium.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-start stagger-grid">
+                
+                <!-- PLAN 1: START-UP -->
+                <div class="stagger-item plan-card bg-white rounded-3xl p-8 border border-slate-200 flex flex-col h-full relative transition-all duration-300">
+                    <div class="mb-6">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full uppercase tracking-wide mb-4">Start-Up</span>
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-2">$48.77<span class="text-lg text-slate-400 font-medium">/mes</span></h3>
+                        <p class="text-sm text-slate-500 min-h-[40px]">Para médicos autónomos buscando establecer presencia básica.</p>
+                        <p class="text-xs text-slate-400 mt-2 font-medium bg-slate-50 p-2 rounded-lg inline-block">+ Configuración inicial: $295 USD</p>
+                    </div>
+                    
+                    <div class="h-px w-full bg-slate-100 my-6"></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> 1 Landing Page (hasta 2 págs)</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Dominio Personalizado + SSL</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> 2 GB Almacenamiento SSD</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> 1 Correo Profesional (250MB)</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Formulario (4 preguntas) + Double Opt-In</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Integración Chat Widget</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Portal de Cliente & Soporte Ticket</li>
+                    </ul>
+                    
+                    <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full py-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-xl transition-colors mt-auto">
+                        Seleccionar Start-Up
+                    </button>
+                </div>
+
+                <!-- PLAN 2: BÁSICO (Highlighted) -->
+                <div class="stagger-item plan-card bg-white rounded-3xl p-8 border-2 border-teal-500 shadow-2xl shadow-teal-900/10 flex flex-col h-full relative transform lg:-translate-y-4 transition-all duration-300">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-500 to-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg">
+                        Más Popular
+                    </div>
+                    
+                    <div class="mb-6 mt-2">
+                        <span class="inline-block px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold rounded-full uppercase tracking-wide mb-4">Básico</span>
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-2">$78.77<span class="text-lg text-slate-400 font-medium">/mes</span></h3>
+                        <p class="text-sm text-slate-500 min-h-[40px]">Para clínicas y consultorios que requieren reservas y profesionalismo.</p>
+                        <p class="text-xs text-slate-400 mt-2 font-medium bg-slate-50 p-2 rounded-lg inline-block">+ Configuración inicial: $450 USD</p>
+                    </div>
+                    
+                    <div class="h-px w-full bg-slate-100 my-6"></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-slate-800 font-medium"><i data-lucide="calendar-days" class="w-5 h-5 text-teal-500 shrink-0"></i> <strong>Sistema de Reservas Integrado</strong></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Sitio Web Completo (hasta 8 págs)</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> 5 GB Almacenamiento SSD</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Correo Prof. + 1 Reenvío</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Integración Chat en Vivo & Exit Pop-Up</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Notificaciones Automatizadas</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-teal-500 shrink-0"></i> Optimización SEO Básico</li>
+                    </ul>
+                    
+                    <!-- BUTTON 2: Animated Border on Popular Plan -->
+                    <div class="animated-border-wrapper w-full mt-auto flex">
+                        <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full py-4 bg-teal-500 hover:bg-teal-700 text-white font-bold rounded-xl shadow-sm transition-all flex justify-center items-center gap-2 relative z-10">
+                            Seleccionar Básico
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+
+                
+
+                <!-- PLAN 3: AVANZADO -->
+                <div class="stagger-item plan-card bg-white rounded-3xl p-8 border border-slate-200 flex flex-col h-full relative transition-all duration-300">
+                    <div class="mb-6">
+                        <span class="inline-block px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-full uppercase tracking-wide mb-4">Avanzado</span>
+                        <h3 class="text-4xl font-extrabold text-slate-900 mb-2">$150.77<span class="text-lg text-slate-400 font-medium">/mes</span></h3>
+                        <p class="text-sm text-slate-500 min-h-[40px]">Plataforma integral automatizada para centros médicos en crecimiento.</p>
+                        <p class="text-xs text-slate-400 mt-2 font-medium bg-slate-50 p-2 rounded-lg inline-block">+ Configuración inicial: $595 USD</p>
+                    </div>
+                    
+                    <div class="h-px w-full bg-slate-100 my-6"></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-slate-800 font-medium"><i data-lucide="bot" class="w-5 h-5 text-purple-500 shrink-0"></i> <strong>Asistente Inteligente (Bot) 🤖</strong></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> Sitio Web Pro (hasta 12 págs)</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> Sistema de Reservas & 8 GB SSD</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> Sistema de Email Marketing</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> Flujo de Bienvenida & Reportes Leads</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> SEO Avanzado + 1 Artículo Blog/mes</li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><i data-lucide="check" class="w-5 h-5 text-purple-500 shrink-0"></i> Soporte VIP (WhatsApp, Email, Ticket)</li>
+                    </ul>
+                    
+                    <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-colors mt-auto">
+                        Seleccionar Avanzado
+                    </button>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 mt-10 font-medium">
+                *Pagos seguros procesados a través de PayPal. Renovación anual de dominios y correos: $95 USD.
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+  
+
+    <section id="testimonios" class="py-20 lg:py-28 bg-white border-y border-slate-200 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-fade-up">
+                <h2 class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-3">No te lleves de nosotros</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Descubre lo que dicen nuestros clientes</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
+                
+                <!-- Review 1 -->
+                <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"10/10 !! Trabajar con este equipo es lo mejor! Los super recomiendo para lo que necesiten en sus companias! Ernesto siempre nos mantiene al dia y ayuda muchisimo con lo que necesite!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-sm">VC</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Victoria Chediak</h4>
+                            <p class="text-xs text-slate-500">Chef, Poke 305</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"Una Maravillosa Experiencia puedo definirla como: Encontré lo que Buscaba!! Muy satisfecha con las soluciones digitales y servicios que Bebell le ha proporcionado a mi negocio."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-sm">MG</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Michelle Goede</h4>
+                            <p class="text-xs text-slate-500">CEO Senses Luxury Spa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"Bebelldigitalsolutions ha sido un paso importante para nuestro desarrollo en el mercado moderno donde la tecnología de punta se impone para el crecimiento y posicionamiento de las empresas."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">GP</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Greydys Pose</h4>
+                            <p class="text-xs text-slate-500">CEO Ame Cafe RD</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Review 4 -->
+                 <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"¡EXCELENTE servicio! Buscaba una solución para facilitarme la vida y la de los clientes también. Sin quejas!! Los felicito!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-sm">LM</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Lisaris Madera</h4>
+                            <p class="text-xs text-slate-500">CEO Santé Brand</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"Mi experiencia ha sido excelente. Me han ayudado a avanzar y a ofrecerle más facilidades a mis clientes. Muy profesionales a la hora de dar el servicio. Siempre atentos a cada solicitud."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-700 font-bold text-sm">MR</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Massiel Rosario</h4>
+                            <p class="text-xs text-slate-500">Trendisima RD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="stagger-item bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">"Vengo desde hace 6 años tratando de tener una página web que sea intuitiva. Estoy super feliz, Ernesto tiene paciencia para escuchar, da buenas sugerencias que me han servido mucho."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">AV</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Andy Valdez</h4>
+                            <p class="text-xs text-slate-500">Fundador For Fun Travel</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+  
+
+    <section id="faq" class="py-20 lg:py-28 relative z-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Preguntas Frecuentes</h2>
+                <p class="text-slate-500">Resolvemos tus dudas sobre cómo funciona el desarrollo de tu Consultorio Digital.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden scroll-fade-up">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-slate-800 pr-8">¿Qué es un consultorio digital?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-600 transform transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-slate-50 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed">Un consultorio digital es un entorno profesional diseñado para que especialistas de la salud, bienestar y servicios personalizados gestionen su atención de forma digital. Permite mostrar servicios, recibir solicitudes, agendar citas, comunicarse con pacientes y organizar procesos sin depender de gestiones manuales o presenciales. En LegacyMD desarrollamos consultorios digitales adaptados a cada especialidad para optimizar la atención, el tiempo y la organización del profesional.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden scroll-fade-up">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-slate-800 pr-8">¿A cuál público va dirigido este programa?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-600 transform transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-slate-50 border-t border-slate-100">
+                        <div class="text-sm text-slate-600 leading-relaxed space-y-2">
+                            <p><strong>1- Profesionales de la Salud:</strong> Médicos generales y especialistas, psicólogos, terapeutas, nutricionistas, fisioterapeutas.</p>
+                            <p><strong>2- Consultores y Coaches:</strong> Profesionales que ofrecen sesiones privadas o asesorías.</p>
+                            <p><strong>3- Centros Médicos y Clínicas:</strong> Consultorios con uno o varios especialistas.</p>
+                            <p><strong>4- Servicios de Bienestar:</strong> Terapias alternativas, salud integral y bienestar emocional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden scroll-fade-up">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-slate-800 pr-8">¿Cuáles son los beneficios de utilizar LegacyMD?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-600 transform transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-slate-50 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed">Nuestra solución te permite organizar tu agenda, reducir cancelaciones, centralizar la información de tus servicios y facilitar la comunicación con pacientes. También mejora la experiencia de atención, optimiza el tiempo operativo y ayuda a captar nuevos pacientes de forma estructurada.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden scroll-fade-up">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-slate-800 pr-8">¿Qué nivel de soporte y asistencia puedo esperar?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-600 transform transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-slate-50 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed">Nuestro equipo ofrece acompañamiento durante el desarrollo, la configuración y el uso del consultorio digital. Brindamos soporte técnico, orientación y ajustes necesarios para asegurar un funcionamiento estable y claro a través de email, WhatsApp y tickets dependiendo de tu plan.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden scroll-fade-up">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-slate-800 pr-8">¿Qué tan seguro es confiar la gestión de información de pacientes?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-600 transform transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-slate-50 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed">La seguridad y confidencialidad de la información es una prioridad. Aplicamos buenas prácticas de protección de datos, incluyendo certificados SSL en tu dominio, para garantizar un manejo responsable de la información profesional y de los pacientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+  
+
+    <!-- Call to Action Banner -->
+    <section id="contacto" class="py-12 relative z-10 scroll-fade-up">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-gradient-to-r from-slate-900 to-teal-900 rounded-3xl p-10 lg:p-16 text-center shadow-2xl relative overflow-hidden">
+                <!-- Background decor -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 relative z-10">¿Listo para modernizar tu consultorio?</h2>
+                <p class="text-teal-100 mb-10 max-w-2xl mx-auto relative z-10">
+                    Agenda una consulta virtual sin compromiso con nuestros especialistas en Desarrollo de Negocios Digitales. Te mostraremos cómo transformar tu práctica.
+                </p>
+                
+                <!-- BUTTON 3: Animated Border in CTA Banner -->
+                <div class="animated-border-wrapper relative z-10 inline-flex">
+                    <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full px-8 py-4 bg-white text-slate-900 font-bold rounded-xl shadow-xl hover:bg-teal-50 transition-colors flex items-center gap-2">
+                        <i data-lucide="video" class="w-5 h-5 text-teal-600"></i>
+                        Agendar Demo Gratuita
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+  
+
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20 mt-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-slate-800 text-lg tracking-tight">Legacy<span class="text-teal-600">MD</span></span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Transformando la Presencia Digital de los profesionales de la salud con soluciones integrales de comercio electrónico.
+                    </p>
+                </div>
+                <div class="col-span-1 md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Soluciones</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Consultorio Digital</a></li>
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Oficina Digital</a></li>
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Tienda Digital</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Compañía</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Términos del Servicio</a></li>
+                            <li><a href="#" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>© 2024 LegacyMD. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    Desarrollado con <span class="text-teal-500">💚</span> por <span class="font-bold text-slate-600">Bebell Digital Solutions</span>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+  
+    <!-- Scripts Initialization -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize Icons
+            lucide.createIcons();
+
+            // Register GSAP ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Hero Animations (Entry)
+            const heroTl = gsap.timeline();
+            
+            heroTl.from(".hero-content > *", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                delay: 0.2
+            })
+            .from(".hero-visual", {
+                x: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=0.6");
+
+            // 2. Scroll Reveal Animations (Simple fade up)
+            gsap.utils.toArray('.scroll-fade-up').forEach(element => {
+                gsap.fromTo(element, 
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+
+            // 3. Staggered Grid Animations (Features and Plans)
+            gsap.utils.toArray('.stagger-grid').forEach(grid => {
+                const items = grid.querySelectorAll('.stagger-item');
+                
+                gsap.fromTo(items,
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        stagger: 0.15,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: grid,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+            
+             // 4. Stats Counter Animation
+            gsap.utils.toArray('.stat-item').forEach(item => {
+                const counter = item.querySelector('.counter');
+                const target = parseFloat(counter.getAttribute('data-target'));
+                
+                gsap.fromTo(counter, 
+                    { innerHTML: 0 }, 
+                    {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 90%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });            
+            
+            // Fix for flash of unstyled content during GSAP load
+            document.querySelectorAll('.invisible-until-scroll').forEach(el => {
+                el.classList.remove('invisible-until-scroll');
+            });
+
+            // Back to Top functionality
+            const backToTop = document.createElement("div");
+            backToTop.id = "back-to-top";
+            backToTop.style.position = "fixed";
+            backToTop.style.bottom = "20px";
+            backToTop.style.right = "20px";
+            backToTop.style.display = "none";
+            backToTop.style.cursor = "pointer";
+            backToTop.style.zIndex = "9999";
+            
+            const backToTopImg = document.createElement("img");
+            backToTopImg.src = "https://bucket.mlcdn.com/a/3336/3336910/images/3ace734af12df1fd752b6855e73fba6a96451ae3.png";
+            backToTopImg.alt = "Volver arriba";
+            backToTopImg.style.width = "50px";
+            backToTopImg.style.height = "50px";
+            
+            backToTop.appendChild(backToTopImg);
+            document.body.appendChild(backToTop);
+            
+            window.addEventListener("scroll", function () {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    backToTop.style.display = "block";
+                } else {
+                    backToTop.style.display = "none";
+                }
+            });
+            
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // FAQ Accordion logic
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+
+
+
+  
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "30min", {origin:"https://app.cal.com"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+
+      Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#0d9488"},"dark":{"cal-brand":"#0d9488"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal element-click embed code ends -->
+
+
+
+  
+    <!-- HelpDesk Widget -->
+    <script>(function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://api.helpdesk.icu/widget2/load?id=d6457627-949b-3e72-affe-826af559e484&r=' + encodeURIComponent(window.location);
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'anw2-sdk-J3ZF1puUcj6v_oJq9VnkhA'));</script>
+
+
+
+
+  
+</body>
+</html>
