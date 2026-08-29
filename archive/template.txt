@@ -103,7 +103,9 @@
 
 
 
-    <!-- Footer (Responsive Adjustments Applied) -->
+  
+    <!-- Footer (EXACT MATCH FROM REFERENCE) -->
+
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20">
         <div class="max-w-7xl mx-auto px-6">
             
@@ -126,27 +128,27 @@
                 <!-- Center Columns (Footer Menu Links - forms first 3 cols on tablet) -->
                 <div class="sm:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Plataforma</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_HOME_URL" class="hover:text-teal-600 transition-colors">Página Inicio</a></li>
-                            <li><a href="YOUR_SERVICES_URL" class="hover:text-teal-600 transition-colors">Servicios</a></li>
-                            <li><a href="YOUR_PLANS_URL" class="hover:text-teal-600 transition-colors">Planes</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Plataforma</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/" class="hover:text-teal-600 transition-colors">Página de Inicio</a></li>
+                            <li><a href="/#caracteristicas" class="hover:text-teal-600 transition-colors">Características</a></li>
+                            <li><a href="/#planes" class="hover:text-teal-600 transition-colors">Planes y Precio</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Compañía</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_ABOUT_URL" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
-                            <li><a href="YOUR_CONTACT_URL" class="hover:text-teal-600 transition-colors">Contacto</a></li>
-                            <li><a href="YOUR_HELP_URL" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Compañía</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/p/acerca" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                            <li><a href="/p/contacto" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                            <li><a href="/ayuda" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Legal</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_TERMS_URL" class="hover:text-teal-600 transition-colors">Términos</a></li>
-                            <li><a href="YOUR_PRIVACY_URL" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
-                            <li><a href="YOUR_DISCLAIMER_URL" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/politicas/terminos" class="hover:text-teal-600 transition-colors">Términos del Servicio</a></li>
+                            <li><a href="/politicas/privacidad" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                            <li><a href="/politicas/disclaimer" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>                            
                         </ul>
                     </div>
                 </div>
@@ -161,7 +163,7 @@
                             </div>
                             <p class="text-slate-400 text-sm mb-6 leading-snug">Contáctenos si tiene alguna pregunta. Nuestro equipo de soporte está aquí para atenderte.</p>
                             <button onclick="window.open('https://wa.me/18296203970?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estoy%20interesado%2Fa%20en%20los%20servicios%20de%20LegacyMD.', '_blank')" class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl flex items-center gap-2 transition-colors border border-slate-700 shadow-sm w-fit group">
-                                <i data-lucide="headphones" class="w-4 h-4 text-slate-300 group-hover:text-white transition-colors"></i>
+                                <i data-lucide="headset" class="w-4 h-4 text-slate-300 group-hover:text-white transition-colors"></i>
                                 Escríbanos
                             </button>
                         </div>
@@ -183,8 +185,6 @@
             </div>
         </div>
     </footer>
-
-
 
 
 
