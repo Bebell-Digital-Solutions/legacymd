@@ -168,6 +168,59 @@
             right: 0;
             top: 0;
         }
+
+
+ /* ==========================================================
+           Animated Border Properties 
+           (Replaces button borders for desired glow effect)
+           ========================================================== */
+        @property --a {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+        }
+
+        @keyframes spin {
+            0% { --a: 0deg; }
+            100% { --a: 360deg; }
+        }
+
+        .animated-border-wrapper {
+            position: relative;
+            padding: 2px; /* Border thickness */
+            border-radius: 0.875rem; /* Matches Tailwind's rounded-xl + padding */
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.3) 90%, 
+                rgba(80, 211, 204, 0.9) 98%, 
+                #50d3cc 100%
+            );
+            animation: spin 3s linear infinite;
+            z-index: 1;
+        }
+
+        .animated-border-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px; /* Glow spread */
+            border-radius: 1rem;
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.1) 90%, 
+                rgba(80, 211, 204, 0.6) 98%,
+                rgba(80, 211, 204, 0.8) 100%
+            );
+            filter: blur(8px);
+            z-index: -1;
+            animation: spin 3s linear infinite;
+        }
+
+
+        
     </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden selection:bg-teal-100">
@@ -302,10 +355,16 @@
                                </div>
                              </div>
                         </div>
+
+
+                                            <!-- BUTTON 1: Animated Border in Hero -->
+                    <div class="animated-border-wrapper w-full sm:w-auto inline-flex">
                         <button id="step2-button" onclick="nextStep()" class="mt-auto w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl shadow-lg transition-all">
                             Confirmar Datos
                         </button>
                     </div>
+                    </div>
+                        
 
                     <!-- STEP 3: STATS -->
                     <div id="step-3" class="flex-1 flex flex-col p-8 hidden-step step-transition">
@@ -389,6 +448,15 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+    
+
     <!-- Features Section -->
     <div class="bg-white border-y border-slate-100 py-12 lg:py-16">
         <div class="max-w-7xl mx-auto px-6">
@@ -432,6 +500,20 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     <!-- Video Section -->
     <section class="pt-16 pb-24 relative overflow-visible mt-24 mb-24">
