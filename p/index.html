@@ -536,48 +536,88 @@
         </div>
     </section>
 
-    <!-- Footer -->
+
+
+
+
+
+    
+
+    
+
+    <!-- Footer (EXACT MATCH FROM REFERENCE) -->
+
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
+            
+            <!-- Main Grid: Stacked on mobile, 12-columns on tablet/desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 lg:gap-8 mb-12">
+                
+                <!-- Left Column (Logo & Description) -->
+                <div class="sm:col-span-12 lg:col-span-3 mb-6 lg:mb-0">
                     <div class="flex items-center gap-2 mb-4">
                         <a href="https://elnegocio.digital/consultorio-digital" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
                             <img src="https://bucket.mlcdn.com/a/3336/3336910/images/80a14e0eaa1e329f06524198044d53e3dcc75d28.png" alt="LegacyMD Logo" class="w-8 h-8 object-contain" />
                             <span class="font-bold text-slate-800 text-lg tracking-tight">HechoEn<span class="text-teal-600">RD</span></span>
                         </a>
                     </div>
-                    <p class="text-sm text-slate-500 leading-relaxed">
+                    <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
                         Transformando la Presencia Digital de los profesionales de la salud en República Dominicana.🇩🇴
                     </p>
                 </div>
-                <div class="col-span-1 md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
+
+                <!-- Center Columns (Footer Menu Links - forms first 3 cols on tablet) -->
+                <div class="sm:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Plataforma</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_HOME_URL" class="hover:text-teal-600 transition-colors">Página Inicio</a></li>
-                            <li><a href="YOUR_SERVICES_URL" class="hover:text-teal-600 transition-colors">Servicios</a></li>
-                            <li><a href="YOUR_PLANS_URL" class="hover:text-teal-600 transition-colors">Planes</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Plataforma</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/" class="hover:text-teal-600 transition-colors">Página de Inicio</a></li>
+                            <li><a href="/#caracteristicas" class="hover:text-teal-600 transition-colors">Características</a></li>
+                            <li><a href="/#planes" class="hover:text-teal-600 transition-colors">Planes</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Compañía</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_ABOUT_URL" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
-                            <li><a href="YOUR_CONTACT_URL" class="hover:text-teal-600 transition-colors">Contacto</a></li>
-                            <li><a href="YOUR_HELP_URL" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Compañía</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/p/acerca" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                            <li><a href="/p/contacto" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                            <li><a href="/ayuda" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-800 mb-4">Información Legal</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a href="YOUR_TERMS_URL" class="hover:text-teal-600 transition-colors">Términos del Servicio</a></li>
-                            <li><a href="YOUR_PRIVACY_URL" class="hover:text-teal-600 transition-colors">Política de Privacidad</a></li>
-                            <li><a href="YOUR_DISCLAIMER_URL" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/politicas/terminos" class="hover:text-teal-600 transition-colors">Términos del Servicio</a></li>
+                            <li><a href="/politicas/privacidad" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                            <li><a href="/politicas/disclaimer" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>                            
                         </ul>
                     </div>
                 </div>
+
+                <!-- Right Column (Support Card - Inline on tablet, pushed bottom on mobile) -->
+                <div class="sm:col-span-5 lg:col-span-4 mt-6 sm:mt-0">
+                    <div class="bg-white rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center h-full min-h-[190px] shadow-lg border border-teal-700">
+                        <div class="relative z-10 w-[75%] sm:w-3/4 lg:w-2/3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h4 class="text-slate-900 font-bold text-xl">Soporte Online</h4>
+                                <span class="bg-teal-500 text-white text-xs font-bold px-2 py-1 rounded-md">24/7</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 leading-snug">Contáctenos si tiene alguna pregunta. Nuestro equipo de soporte está aquí para atenderte.</p>
+                            <button class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl flex items-center gap-2 transition-colors border border-slate-700 shadow-sm w-fit group">
+                                <i data-lucide="headphones" class="w-4 h-4 text-slate-300 group-hover:text-white transition-colors"></i>
+                                Escríbanos
+                            </button>
+                        </div>
+                        <img 
+                            src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/legacymd-operator.webp" 
+                            alt="Soporte 24/7" 
+                            class="absolute bottom-0 right-0 w-32 md:w-36 lg:w-40 object-contain z-0 pointer-events-none" 
+                        />
+                    </div>
+                </div>
+
             </div>
+            
             <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
                 <p>LegacyMD © 2024. Todos los derechos reservados.</p>
                 <p class="flex items-center gap-1">
@@ -586,6 +626,15 @@
             </div>
         </div>
     </footer>
+    
+    
+
+
+
+
+
+
+    
 
     <!-- BACK TO TOP ICON-->
     <script>
