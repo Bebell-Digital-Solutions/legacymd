@@ -266,7 +266,7 @@
             <!-- Hero Interactive Laptop (Right) -->
             <div class="hero-visual relative w-full pt-10 lg:pt-0">
                 <!-- Decorative element behind laptop -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-teal-100 to-purple-100 rounded-full opacity-30 blur-2xl -z-10 pointer-events-none"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] bg-gradient-to-tr from-teal-100 to-purple-100 rounded-full opacity-30 blur-2xl -z-10 pointer-events-none"></div>
                 
                 <div class="macbook-wrapper">
                     <div class="macbook drop-shadow-2xl">
