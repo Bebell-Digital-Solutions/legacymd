@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Portafolio | LegacyMD - Casos de Éxito</title>
+    <meta name="description" content="Explora nuestro portafolio de consultorios digitales desarrollados para médicos y profesionales. Descubre cómo transformamos prácticas médicas con tecnología.">
+    <meta name="keywords" content="portafolio medico, casos de exito, consultorio digital, paginas web para medicos, bebell digital solutions">
+    <meta name="author" content="Bebell Digital Solutions">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elnegocio.digital/portafolio">
+    <meta property="og:title" content="Portafolio LegacyMD | Casos de Éxito">
+    <meta property="og:description" content="Explora nuestro portafolio de consultorios digitales desarrollados para médicos y profesionales.">
+    <meta property="og:image" content="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- favicon -->    
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png">
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; /* slate-50 */
+        }
+        
+        .invisible-until-scroll { visibility: hidden; }
+
+        /* Custom Gradients & Utilities */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #0d9488, #9333ea); /* teal-600 to purple-600 */
+        }
+        
+        /* Animated Border Properties */
+        @property --a {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+        }
+
+        @keyframes spin {
+            0% { --a: 0deg; }
+            100% { --a: 360deg; }
+        }
+
+        .animated-border-wrapper {
+            position: relative;
+            padding: 2px;
+            border-radius: 0.875rem;
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.3) 90%, 
+                rgba(80, 211, 204, 0.9) 98%, 
+                #50d3cc 100%
+            );
+            animation: spin 3s linear infinite;
+            z-index: 1;
+        }
+
+        .animated-border-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 1rem;
+            background: conic-gradient(
+                from var(--a), 
+                transparent 0%, 
+                transparent 75%, 
+                rgba(80, 211, 204, 0.1) 90%, 
+                rgba(80, 211, 204, 0.6) 98%,
+                rgba(80, 211, 204, 0.8) 100%
+            );
+            filter: blur(8px);
+            z-index: -1;
+            animation: spin 3s linear infinite;
+        }
+
+        /* Portfolio Card Hover Effect */
+        .portfolio-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .portfolio-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.15); /* teal shadow */
+            transform: translateY(-8px);
+        }
+        .portfolio-img-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 overflow-x-hidden selection:bg-teal-200 selection:text-teal-900 relative">
+
+    <div class="relative w-full overflow-x-hidden">
+        
+        <!-- Background Accents (Ambient glow) -->
+        <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-0 right-0 w-3/4 h-screen bg-gradient-to-l from-teal-50/70 to-transparent"></div>
+            <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-purple-200/30 rounded-full blur-[100px]"></div>
+            <div class="absolute top-[40%] -left-40 w-[500px] h-[500px] bg-teal-200/30 rounded-full blur-[100px]"></div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="relative z-50 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center bg-transparent">
+            <div class="flex items-center gap-2">
+                <a href="/" class="flex items-center gap-2 group">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD Logo" class="w-10 h-10 object-contain" />
+                    <span class="font-bold text-slate-800 text-xl tracking-tight">Legacy<span class="text-teal-600">MD</span></span>
+                </a>
+            </div>
+            
+            
+            <div class="hidden md:flex items-center gap-6">
+                <a href="/" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Inicio</a>
+                
+                
+                <a href="/#caracteristicas" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Características</a>
+                
+                
+                
+                <a href="/#planes" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Planes</a>
+                
+                
+                <a href="/portafolio" class="text-sm font-bold text-teal-600 transition-colors pb-1">Portafolio</a>
+                
+                
+                <a href="/p/reporte" target="_blank" class="text-sm font-semibold text-slate-600 hover:text-teal-600 transition-colors">Reporte</a>
+                
+
+                <a href="https://en.legacymd.online" title="English" class="text-slate-600 hover:text-teal-600 transition-colors">
+                    <i data-lucide="languages" class="w-5 h-5"></i>
+                </a>
+                
+                
+                
+                
+                <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="text-sm font-bold bg-teal-700 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 hover:shadow-lg transition-all shadow-slate-300">
+                    Agendar Demo
+                </button>
+            </div>
+        </nav>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Portfolio Header -->
+        <header class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-0 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-100/50 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                </span>
+                Nuestro Trabajo
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                Portafolio y <span class="text-gradient">Casos de Éxito</span>
+            </h1>
+            
+            <p class="text-lg text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Explora cómo hemos transformado la presencia digital de médicos y clínicas, ayudándoles a automatizar citas, captar pacientes y proyectar máxima autoridad online.
+            </p>
+        </header>
+
+        <!-- Portfolio Grid Section (3 Cards Per Row) -->
+        <main class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-32">
+            
+            <!-- Grid Container: 1 col mobile, 2 cols tablet, 3 cols desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            
+            
+            
+            
+            
+                
+                <!-- Portfolio Card 1 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Dr. Alberto Ramírez - Cirugía Plástica" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-teal-700 text-xs font-bold rounded-full shadow-sm">Cirugía Plástica</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Dr. Alberto Ramírez</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">Desarrollo de sitio web premium con sistema de reservas automatizado, optimización SEO y pasarela de pagos integrada para consultas virtuales.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- Portfolio Card 2 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1551076805-e16760cce1f2?auto=format&fit=crop&q=80&w=800" alt="Clínica Sonrisas - Odontología" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-purple-700 text-xs font-bold rounded-full shadow-sm">Odontología</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Clínica Sonrisas VIP</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">Portal interactivo para pacientes con recordatorios por WhatsApp, chatbot de atención 24/7 y gestión de historiales clínicos básicos.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- Portfolio Card 3 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800" alt="Dra. Carmen López - Pediatría" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-blue-700 text-xs font-bold rounded-full shadow-sm">Pediatría</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Dra. Carmen López</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">Plataforma de telemedicina con sistema de agendamiento sincronizado con Google Calendar y captación de leads mediante e-books.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- Portfolio Card 4 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Centro Médico Bienestar" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-emerald-700 text-xs font-bold rounded-full shadow-sm">Policlínico</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Centro Médico Bienestar</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">Sitio web corporativo de 12 páginas, integración de múltiples especialistas, blog de salud y optimización SEO avanzado local.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- Portfolio Card 5 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800" alt="Lic. Clara Ruiz - Nutrición" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-orange-700 text-xs font-bold rounded-full shadow-sm">Nutrición & Dietética</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">NutriLife Digital</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">E-commerce de planes nutricionales, integración con Instagram, cuestionarios automatizados para nuevos pacientes y diseño responsivo.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- Portfolio Card 6 -->
+                <article class="portfolio-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col group relative z-10">
+                    <div class="portfolio-img-wrapper relative h-56 w-full overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" alt="Dr. Marcos Sánchez - Traumatología" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-white/95 backdrop-blur-sm text-pink-700 text-xs font-bold rounded-full shadow-sm">Traumatología</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Dr. Marcos Sánchez</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">Landing page de alta conversión para procedimientos específicos, integración con campañas de Meta Ads y portal exclusivo para pacientes post-operatorios.</p>
+                        <div class="w-full h-px bg-slate-100 mb-6"></div>
+                        <a href="#" class="inline-flex items-center gap-2 text-teal-600 font-bold text-sm group-hover:text-teal-700 transition-colors">
+                            Ver Proyecto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Call to Action Banner -->
+        <section id="contacto" class="py-12 mt-0 relative z-10 scroll-fade-up">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="bg-gradient-to-r from-slate-900 to-teal-900 rounded-3xl p-10 lg:p-16 text-center shadow-2xl relative overflow-hidden">
+                    <!-- Background decor -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+                    
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 relative z-10">¿Listo para modernizar tu consultorio?</h2>
+                    <p class="text-teal-100 mb-10 max-w-2xl mx-auto relative z-10">
+                        Agenda una consulta virtual sin compromiso con nuestros especialistas en Desarrollo de Negocios Digitales. Te mostraremos cómo transformar tu práctica.
+                    </p>
+                    
+                    <!-- BUTTON 3: Animated Border in CTA Banner -->
+                    <div class="animated-border-wrapper relative z-10 inline-flex">
+                        <button data-cal-link="bebell-digital-solutions/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="w-full px-8 py-4 bg-white text-slate-900 font-bold rounded-xl shadow-xl hover:bg-teal-50 transition-colors flex items-center gap-2">
+                            <i data-lucide="video" class="w-5 h-5 text-teal-600"></i>
+                            Agendar Demo Gratuita
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    <!-- Footer (EXACT MATCH FROM REFERENCE) -->
+
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Main Grid: Stacked on mobile, 12-columns on tablet/desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 lg:gap-8 mb-12">
+                
+                <!-- Left Column (Logo & Description) -->
+                <div class="sm:col-span-12 lg:col-span-3 mb-6 lg:mb-0">
+                    <div class="flex items-center gap-2 mb-4">
+                        <a href="https://elnegocio.digital/consultorio-digital" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/80a14e0eaa1e329f06524198044d53e3dcc75d28.png" alt="LegacyMD Logo" class="w-8 h-8 object-contain" />
+                            <span class="font-bold text-slate-800 text-lg tracking-tight">HechoEn<span class="text-teal-600">RD</span></span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed max-w-sm">
+                        Transformando la Presencia Digital de los profesionales de la salud en República Dominicana.🇩🇴
+                    </p>
+                </div>
+
+                <!-- Center Columns (Footer Menu Links - forms first 3 cols on tablet) -->
+                <div class="sm:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Plataforma</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/" class="hover:text-teal-600 transition-colors">Página de Inicio</a></li>
+                            <li><a href="/#caracteristicas" class="hover:text-teal-600 transition-colors">Características</a></li>
+                            <li><a href="/#planes" class="hover:text-teal-600 transition-colors">Planes y Precio</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Compañía</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/p/acerca" class="hover:text-teal-600 transition-colors">Sobre Nosotros</a></li>
+                            <li><a href="/p/contacto" class="hover:text-teal-600 transition-colors">Contacto</a></li>
+                            <li><a href="/ayuda" class="hover:text-teal-600 transition-colors">Centro de Ayuda</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li><a href="/politicas/terminos" class="hover:text-teal-600 transition-colors">Términos</a></li>
+                            <li><a href="/politicas/privacidad" class="hover:text-teal-600 transition-colors">Privacidad</a></li>
+                            <li><a href="/politicas/disclaimer" class="hover:text-teal-600 transition-colors">Disclaimer</a></li>                            
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column (Support Card - Inline on tablet, pushed bottom on mobile) -->
+                <div class="sm:col-span-5 lg:col-span-4 mt-6 sm:mt-0">
+                    <div class="bg-white rounded-2xl p-6 relative overflow-hidden flex flex-col justify-center h-full min-h-[190px] shadow-lg border border-teal-700">
+                        <div class="relative z-10 w-[75%] sm:w-3/4 lg:w-2/3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h4 class="text-slate-900 font-bold text-xl">Soporte Online</h4>
+                                <span class="bg-teal-500 text-white text-xs font-bold px-2 py-1 rounded-md">24/7</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 leading-snug">Contáctenos si tiene alguna pregunta. Nuestro equipo de soporte está aquí para atenderte.</p>
+                            <button onclick="window.open('https://wa.me/18296203970?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estoy%20interesado%2Fa%20en%20los%20servicios%20de%20LegacyMD.', '_blank')" class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl flex items-center gap-2 transition-colors border border-slate-700 shadow-sm w-fit group">
+                                <i data-lucide="headset" class="w-4 h-4 text-slate-300 group-hover:text-white transition-colors"></i>
+                                Escríbanos
+                            </button>
+                        </div>
+                        <img 
+                            src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/legacymd-operator.webp" 
+                            alt="Soporte 24/7" 
+                            class="absolute bottom-0 right-0 w-32 md:w-36 lg:w-40 object-contain z-0 pointer-events-none" 
+                        />
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>LegacyMD © 2024. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    Desarrollado con <span class="text-green-500">💚</span> por <span class="font-bold text-slate-600">Bebell Digital Solutions</span>.
+                </p>
+            </div>
+        </div>
+    </footer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div>
+
+    <!-- Initialize Icons & Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Back to Top functionality
+        const backToTop = document.createElement("div");
+        backToTop.id = "back-to-top";
+        backToTop.style.position = "fixed";
+        backToTop.style.bottom = "20px";
+        backToTop.style.right = "20px";
+        backToTop.style.display = "none";
+        backToTop.style.cursor = "pointer";
+        backToTop.style.zIndex = "9999";
+        
+        const backToTopImg = document.createElement("img");
+        backToTopImg.src = "https://bucket.mlcdn.com/a/3336/3336910/images/3ace734af12df1fd752b6855e73fba6a96451ae3.png";
+        backToTopImg.alt = "Volver arriba";
+        backToTopImg.style.width = "50px";
+        backToTopImg.style.height = "50px";
+        
+        backToTop.appendChild(backToTopImg);
+        document.body.appendChild(backToTop);
+        
+        window.addEventListener("scroll", function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+        
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "30min", {origin:"https://app.cal.com"});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#0d9488"},"dark":{"cal-brand":"#0d9488"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal element-click embed code ends -->
+
+    <!-- HelpDesk Widget -->
+    <script>(function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://api.helpdesk.icu/widget2/load?id=d6457627-949b-3e72-affe-826af559e484&r=' + encodeURIComponent(window.location);
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'anw2-sdk-J3ZF1puUcj6v_oJq9VnkhA'));</script>
+</body>
+</html>
