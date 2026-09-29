@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
   }
 
   .progress {
@@ -29,7 +29,7 @@
       linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right/50% 50%;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    animation: progress-ofy9at 4s infinite linear;
+    animation: progress-ofy9at 2.8s infinite linear;
   }
 
   @keyframes progress-ofy9at {
