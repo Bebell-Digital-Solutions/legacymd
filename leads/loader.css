@@ -1,12 +1,10 @@
-
-
   .page-loader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(26, 158, 162, 0.95); /* teal background with slight transparency */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +15,8 @@
   .progress {
     width: 71.6px;
     height: 71.6px;
-    background: linear-gradient(#1a9ea2 0 0) bottom/100% 0% no-repeat #d1f0f1; /* Changed to lighter teal #d1f0f1 */
+    /* White icon base — fill with white, then animate with a gradient of white to transparent */
+    background: linear-gradient(#ffffff 0 0) bottom/100% 0% no-repeat #1a9ea2; /* teal base, white fill */
     -webkit-mask: 
       radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left/50% 50%, 
       radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right/50% 50%, 
