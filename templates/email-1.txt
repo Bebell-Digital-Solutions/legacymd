@@ -1,0 +1,469 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>LegacyMD | Desarrolla tu Consultorio Digital</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+        
+        @media only screen and (max-width: 620px) {
+            .email-container {
+                width: 100% !important;
+                border-radius: 0 !important;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            .fluid { width: 100% !important; height: auto !important; }
+            .stack-column {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            .mobile-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .mobile-button {
+                display: block !important;
+                width: 100% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
+            }
+            h1 { font-size: 26px !important; line-height: 34px !important; }
+            h2 { font-size: 20px !important; line-height: 28px !important; }
+            .hero-image { max-width: 100% !important; height: auto !important; }
+            .benefit-icon { width: 36px !important; height: 36px !important; }
+        }
+    </style>
+
+
+
+
+    <!-- Preheader -->
+    <div style="display: none; font-size: 1px; color: #e2e8f0; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+        Descubre cómo transformar tu práctica médica con un Consultorio Digital profesional.
+    </div>
+
+    <!-- Email Wrapper -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background-color: #e2e8f0;">
+        <tbody><tr>
+            <td align="center" style="padding: 40px 20px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" class="email-container" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid #cbd5e1;">
+                    
+                    <!-- HEADER -->
+                    <tbody><tr>
+                        <td align="center" style="padding: 30px 40px; background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);">
+                            <a href="https://legacymd.online" target="_blank" style="text-decoration: none;">
+                                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD" width="60" height="60" style="display: block; margin: 0 auto 12px; width: 60px; height: 60px; border-radius: 12px;">
+                            </a>
+                            <span style="font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Legacy<span style="color: #99f6e4;">MD</span>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <!-- HERO -->
+                    <tr>
+                        <td align="center" style="padding: 48px 40px 32px; background-color: #ffffff;">
+                            <h1 style="margin: 0 0 16px; font-size: 30px; line-height: 40px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                ¿Quieres recibir más<br>
+                                <span style="color: #0d9488;">pacientes por Internet?</span>
+                            </h1>
+                            <p style="margin: 0; font-size: 16px; line-height: 26px; color: #334155; max-width: 480px;">
+                                Desarrolla tu <strong style="color: #0f172a;">Consultorio Digital</strong> y transforma la manera en que gestionas tu práctica médica.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- HERO IMAGE -->
+                    <tr>
+                        <td align="center" style="padding: 0 40px 32px;">
+                            <img class="fluid hero-image" src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Banners%20&%20Backgrounds/HealthCenter.webp?updatedAt=1790626919317" alt="Consultorio Digital LegacyMD" width="520" style="display: block; width: 100%; max-width: 520px; height: auto; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        </td>
+                    </tr>
+
+                    <!-- BENEFITS SECTION -->
+                    <tr>
+                        <td style="padding: 16px 40px 40px;">
+                            <h2 style="margin: 0 0 24px; font-size: 22px; line-height: 30px; font-weight: 700; color: #0f172a; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Todo lo que necesitas para tu práctica digital
+                            </h2>
+                            
+                            <!-- Benefits List -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                
+                                <!-- Benefit 1: Movilidad Total -->
+                                <tbody><tr>
+                                    <td style="padding: 18px 0; border-bottom: 1px solid #e2e8f0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td width="56" valign="top" style="width: 56px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="48" style="width: 48px; height: 48px; background-color: #ccfbf1; border-radius: 10px;">
+                                                        <tbody><tr>
+                                                            <td align="center" valign="middle" width="48" height="48" style="width: 48px; height: 48px; text-align: center; vertical-align: middle;">
+                                                                <img src="https://api.iconify.design/lucide:smartphone.svg?color=%230d9488" alt="" width="24" height="24" class="benefit-icon" style="display: block; width: 24px; height: 24px; margin: 0 auto;">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                                <td style="padding-left: 16px;" valign="top">
+                                                    <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 700; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Movilidad Total</h3>
+                                                    <p style="margin: 0; font-size: 14px; line-height: 22px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Gestiona tu negocio desde cualquier dispositivo. 100% compatible con móviles.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+
+                                <!-- Benefit 2: Mayor Alcance -->
+                                <tr>
+                                    <td style="padding: 18px 0; border-bottom: 1px solid #e2e8f0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td width="56" valign="top" style="width: 56px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="48" style="width: 48px; height: 48px; background-color: #f3e8ff; border-radius: 10px;">
+                                                        <tbody><tr>
+                                                            <td align="center" valign="middle" width="48" height="48" style="width: 48px; height: 48px; text-align: center; vertical-align: middle;">
+                                                                <img src="https://api.iconify.design/lucide:globe.svg?color=%239333ea" alt="" width="24" height="24" class="benefit-icon" style="display: block; width: 24px; height: 24px; margin: 0 auto;">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                                <td style="padding-left: 16px;" valign="top">
+                                                    <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 700; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Mayor Alcance</h3>
+                                                    <p style="margin: 0; font-size: 14px; line-height: 22px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Integra Instagram, Facebook, TikTok y mejora tu posicionamiento en Google.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+
+                                <!-- Benefit 3: Automatización -->
+                                <tr>
+                                    <td style="padding: 18px 0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td width="56" valign="top" style="width: 56px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="48" style="width: 48px; height: 48px; background-color: #dbeafe; border-radius: 10px;">
+                                                        <tbody><tr>
+                                                            <td align="center" valign="middle" width="48" height="48" style="width: 48px; height: 48px; text-align: center; vertical-align: middle;">
+                                                                <img src="https://api.iconify.design/lucide:settings.svg?color=%232563eb" alt="" width="24" height="24" class="benefit-icon" style="display: block; width: 24px; height: 24px; margin: 0 auto;">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                                <td style="padding-left: 16px;" valign="top">
+                                                    <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 700; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Automatización 24/7</h3>
+                                                    <p style="margin: 0; font-size: 14px; line-height: 22px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Reservas, recordatorios y captación de leads funcionando en piloto automático.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                    <!-- CTA BUTTON -->
+                    <tr>
+                        <td align="center" style="padding: 8px 40px 48px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                    <td align="center" style="border-radius: 12px; background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);">
+                                        <a href="https://cal.com/bebell-digital-solutions/30min" target="_blank" class="mobile-button" style="display: inline-block; padding: 18px 40px; font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; border-radius: 12px; letter-spacing: 0.3px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            Agendar Demo Gratuita
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                            <p style="margin: 16px 0 0; font-size: 13px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Consulta virtual sin compromiso • 30 minutos
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- STATS -->
+                    <tr>
+                        <td style="padding: 32px 40px; background-color: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tbody><tr>
+                                    <td align="center" width="33%" style="padding: 0 8px;">
+                                        <p style="margin: 0; font-size: 28px; font-weight: 800; color: #0d9488; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">5/5</p>
+                                        <p style="margin: 4px 0 0; font-size: 11px; font-weight: 600; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Calificación</p>
+                                    </td>
+                                    <td align="center" width="33%" style="padding: 0 8px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                        <p style="margin: 0; font-size: 28px; font-weight: 800; color: #0d9488; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">48+</p>
+                                        <p style="margin: 4px 0 0; font-size: 11px; font-weight: 600; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Perfiles Lanzados</p>
+                                    </td>
+                                    <td align="center" width="33%" style="padding: 0 8px;">
+                                        <p style="margin: 0; font-size: 28px; font-weight: 800; color: #0d9488; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">100%</p>
+                                        <p style="margin: 4px 0 0; font-size: 11px; font-weight: 600; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Satisfacción</p>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+
+
+
+
+
+                    <!-- PLANS -->
+                    <tr>
+                        <td style="padding: 40px 40px 24px;">
+                            <h2 style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: #0f172a; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Planes desde <span style="color: #0d9488;">$48.77/mes</span>
+                            </h2>
+                            <p style="margin: 0 0 24px; font-size: 14px; color: #475569; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Hosting, dominio y soporte premium incluidos en todos los planes.
+                            </p>
+                            
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tbody><tr>
+                                    <td class="stack-column" width="33%" valign="top" style="padding: 0 6px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+                                            <tbody><tr>
+                                                <td style="padding: 20px 16px; text-align: center;">
+                                                    <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Start-Up</p>
+                                                    <p style="margin: 0 0 12px; font-size: 20px; font-weight: 800; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">$48<span style="font-size: 12px; font-weight: 500; color: #475569;">/mes</span></p>
+                                                    <p style="margin: 0; font-size: 12px; line-height: 18px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Landing page + Dominio + SSL</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                    
+                                    <td class="stack-column" width="33%" valign="top" style="padding: 0 6px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0d9488; border-radius: 12px;">
+                                            <tbody><tr>
+                                                <td style="padding: 20px 16px; text-align: center;">
+                                                    <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; color: #ccfbf1; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Más Popular</p>
+                                                    <p style="margin: 0 0 12px; font-size: 20px; font-weight: 800; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">$78<span style="font-size: 12px; font-weight: 500; color: #ccfbf1;">/mes</span></p>
+                                                    <p style="margin: 0; font-size: 12px; line-height: 18px; color: #f0fdfa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sitio completo + Reservas + SEO</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                    
+                                    <td class="stack-column" width="33%" valign="top" style="padding: 0 6px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+                                            <tbody><tr>
+                                                <td style="padding: 20px 16px; text-align: center;">
+                                                    <p style="margin: 0 0 8px; font-size: 11px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Avanzado</p>
+                                                    <p style="margin: 0 0 12px; font-size: 20px; font-weight: 800; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">$150<span style="font-size: 12px; font-weight: 500; color: #475569;">/mes</span></p>
+                                                    <p style="margin: 0; font-size: 12px; line-height: 18px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Bot IA + Email Marketing + VIP</p>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                    <!-- SECONDARY CTA -->
+                    <tr>
+                        <td align="center" style="padding: 16px 40px 40px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                    <td align="center">
+                                         <a href="https://legacymd.online/#planes" target="_blank" style="display: inline-block; padding: 14px 32px; font-size: 14px; font-weight: 700; color: #0d9488; text-decoration: none; border: 2px solid #0d9488; border-radius: 10px;">
+                                            Ver Todos los Planes →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+
+
+
+
+
+
+<!-- TESTIMONIAL -->
+                    <tr>
+                        <td style="padding: 32px 40px; background-color: #f0fdfa; border-top: 1px solid #ccfbf1;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <img src="https://api.iconify.design/lucide:star.svg?color=%23f59e0b" alt="" width="18" height="18" style="display: inline-block; width: 18px; height: 18px; margin: 0 2px 12px;">
+                                        <img src="https://api.iconify.design/lucide:star.svg?color=%23f59e0b" alt="" width="18" height="18" style="display: inline-block; width: 18px; height: 18px; margin: 0 2px 12px;">
+                                        <img src="https://api.iconify.design/lucide:star.svg?color=%23f59e0b" alt="" width="18" height="18" style="display: inline-block; width: 18px; height: 18px; margin: 0 2px 12px;">
+                                        <img src="https://api.iconify.design/lucide:star.svg?color=%23f59e0b" alt="" width="18" height="18" style="display: inline-block; width: 18px; height: 18px; margin: 0 2px 12px;">
+                                        <img src="https://api.iconify.design/lucide:star.svg?color=%23f59e0b" alt="" width="18" height="18" style="display: inline-block; width: 18px; height: 18px; margin: 0 2px 12px;">
+                                        
+                                        <p style="margin: 0 0 16px; font-size: 15px; line-height: 24px; color: #1e293b; font-style: italic; max-width: 420px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            "10/10 !! Trabajar con este equipo es lo mejor! Los super recomiendo para lo que necesiten en sus companias!"
+                                        </p>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td valign="middle" style="text-align: center;">
+                                                    <p style="margin: 0; font-size: 13px; font-weight: 700; color: #0f172a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Victoria Chediak</p>
+                                                    <p style="margin: 0; font-size: 12px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Chef, Poke 305</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+
+
+
+
+
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td style="padding: 40px; background-color: #f8fafc; border-top: 1px solid #e2e8f0;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                
+                                <tbody><tr>
+                                    <td align="center" style="padding-bottom: 20px;">
+                                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png" alt="LegacyMD" width="40" height="40" style="display: block; margin: 0 auto; width: 40px; height: 40px; border-radius: 8px;">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <p style="margin: 0; font-size: 13px; color: #334155; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            Transformando la Presencia Digital de los profesionales de la salud.
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+
+
+                               <!-- Social Links -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tbody><tr>
+
+
+ <td style="padding: 0 6px;">
+                                                    <a href="https://facebook.com/legacymd" target="_blank" style="text-decoration: none;">
+                                                        <img src="https://api.iconify.design/lucide:facebook.svg?color=%230d9488" alt="Facebook" width="24" height="24" style="display: block; width: 24px; height: 24px;">
+                                                    </a>
+                                                </td>
+
+                                               
+                                                <td style="padding: 0 6px;">
+                                                    <a href="https://instagram.com/legacymd" target="_blank" style="text-decoration: none;">
+                                                        <img src="https://api.iconify.design/lucide:instagram.svg?color=%230d9488" alt="Instagram" width="24" height="24" style="display: block; width: 24px; height: 24px;">
+                                                    </a>
+                                                </td>
+                                               
+
+                                                <td style="padding: 0 6px;">
+                                                    <a href="https://wa.me/18296203970" target="_blank" style="text-decoration: none;">
+                                                        <img src="https://api.iconify.design/simple-icons:whatsapp.svg?color=%230d9488" alt="WhatsApp" width="24" height="24" style="display: block; width: 24px; height: 24px;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding-bottom: 24px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="height: 1px; background-color: #e2e8f0; line-height: 1px; font-size: 0;">&nbsp;</td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                               <!-- End Social Links -->
+
+
+
+
+
+
+                                <tr>
+                                    <td align="center" style="padding-bottom: 16px;">
+                                        <p style="margin: 0 0 8px; font-size: 13px; color: #334155; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            ¿Tienes preguntas? <a href="mailto:hola@legacymd.online" style="color: #0d9488; text-decoration: none; font-weight: 600;">hola@legacymd.online</a>
+                                        </p>
+                                        <p style="margin: 0; font-size: 12px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            <a href="https://legacymd.online" style="color: #475569; text-decoration: underline;">Sitio Web</a> • 
+                                            <a href="https://legacymd.online/portafolio" style="color: #475569; text-decoration: underline;">Portafolio</a> • 
+                                            <a href="https://legacymd.online/p/contacto" style="color: #475569; text-decoration: underline;">Contacto</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td align="center" style="padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                                        <p style="margin: 0 0 8px; font-size: 11px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            LegacyMD © 2024. Todos los derechos reservados.
+                                        </p>
+                                        <p style="margin: 0; font-size: 11px; color: #475569; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            Desarrollado con 💚 por <a href="https://bebelldigital.com" style="color: #0d9488; text-decoration: none;">Bebell Digital Solutions</a>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" style="padding-top: 24px;">
+                                        <p style="margin: 0; font-size: 11px; color: #64748b; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            Recibiste este correo porque mostraste interés en nuestros servicios.<br>
+                                            <a href="{{unsubscribe_url}}" style="color: #475569; text-decoration: underline;">Cancelar suscripción</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                        </td>
+                    </tr>
+
+                </tbody></table>
+                <!-- End Email Container -->
+
+            </td>
+        </tr>
+    </tbody></table>
+
+
+
