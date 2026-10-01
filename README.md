@@ -170,13 +170,13 @@ Agenda una consulta virtual sin compromiso con nuestros especialistas en Desarro
 
 ## 📞 Contacto y Soporte
 
-</div>
+
 
 <table>
   <tr>
     <td width="70%" valign="top">
       <ul>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/18296203970?text=¡Hola!%20Estoy%20interesado/a%20en%20los%20servicios%20de%20LegacyMD.">+1 829-620-3970</a></li>
+        <li><strong>Soporte:</strong> <a href="https://helpdesk.legacymd.online/im/d6457627-949b-3e72-affe-826af559e484">Chat en vivo</a></li>
         <li><strong>Sitio Web:</strong> <a href="https://legacymd.online">legacymd.online</a></li>
         <li><strong>Email:</strong> <a href="mailto:soporte@legacymd.online">soporte@legacymd.online</a></li>
       </ul>
@@ -186,6 +186,7 @@ Agenda una consulta virtual sin compromiso con nuestros especialistas en Desarro
     </td>
   </tr>
 </table>
+</div>
 
 ---
 
