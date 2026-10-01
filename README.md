@@ -4,7 +4,7 @@
 
 # LegacyMD - Consultorio Digital para Médicos
 
-<img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Banners%20&%20Backgrounds/socialshare-consultorio.png" alt="LegacyMD Banner" width="100%">
+<img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Banners%20&%20Backgrounds/Macbook-Air-legacymd.online%20(1).webp" alt="LegacyMD Banner" width="100%">
 
 ---
 
