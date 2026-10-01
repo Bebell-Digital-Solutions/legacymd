@@ -1,46 +1,133 @@
-# LegacyMD - Consultorio Digital
+# LegacyMD - Consultorio Digital para Médicos
 
-![LegacyMD Banner](https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Banners%20&%20Backgrounds/socialshare-consultorio.png)
+[![Hecho en RD](https://img.shields.io/badge/Hecho%20en-RD-blue?style=for-the-badge&logo=appveyor)](https://elnegocio.digital/consultorio-digital)
+[![Bebell Digital Solutions](https://img.shields.io/badge/Bebell-Digital%20Solutions-teal?style=for-the-badge)](https://bebell.digital)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![GSAP](https://img.shields.io/badge/GSAP-Animations-green?style=for-the-badge)](https://greensock.com/gsap/)
 
-> Landing page oficial de **LegacyMD**, una solución de **Bebell Digital Solutions** que permite a médicos y profesionales de la salud crear su propio consultorio digital para vender servicios, gestionar citas, automatizar mensajes y captar pacientes online.
+> **La evolución de tu práctica médica.**  
+> Desarrolla tu Consultorio Digital y vende tus consultas por Internet.
 
-## 📸 Capturas de Pantalla
+<img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Banners%20&%20Backgrounds/socialshare-consultorio.png" alt="LegacyMD Banner" width="100%">
 
-### Vista de Escritorio
-<img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Portafolio/Consultorios%20Digitales/Macbook-Air-bebell-digital-solutions.github.io%20(6).png" alt="Vista de escritorio de LegacyMD" width="100%">
+## ¿Quieres recibir más pacientes por Internet?
 
-### Vista Móvil
-<!-- Reemplaza esta imagen con una captura real de la vista móvil -->
-<img src="https://via.placeholder.com/375x812?text=Mobile+Screenshot" alt="Vista móvil de LegacyMD" width="100%">
+**LegacyMD** es la solución premium para médicos y profesionales de la salud que desean digitalizar su consultorio. Vende servicios, gestiona citas, automatiza mensajes y capta pacientes online.
 
-## ✨ Características
+[🚀 **Agendar Demo**](https://cal.com/bebell-digital-solutions/30min) &nbsp;&nbsp;|&nbsp;&nbsp; [💰 **Ver Planes**](#planes-y-precios)
 
-- **Diseño Responsive**: Adaptado a todos los dispositivos.
-- **Animaciones GSAP**: Transiciones suaves y efectos de scroll.
-- **Planes de Precios**: Tres planes (Start-Up, Básico, Avanzado) con integración de PayPal.
-- **Sistema de Reservas**: Integración con Cal.com para agendar demos.
-- **Testimonios**: Sección de reseñas de clientes.
-- **FAQ Acordeón**: Preguntas frecuentes interactivas.
-- **Widget de Soporte**: Integración con HelpDesk para atención 24/7.
-- **SEO Optimizado**: Meta tags para redes sociales y motores de búsqueda.
-- **Carga Rápida**: Uso de CDN para Tailwind, GSAP y fuentes.
+---
 
-## 🛠 Tecnologías Utilizadas
+## ✨ Todo lo que necesitas para tu práctica digital
 
-- **HTML5** - Estructura semántica.
-- **Tailwind CSS** (vía CDN) - Estilos utilitarios.
-- **GSAP** - Animaciones y ScrollTrigger.
-- **Lucide Icons** - Iconografía.
-- **Cal.com** - Embed para agendamiento de citas.
-- **HelpDesk** - Widget de soporte.
-- **Google Fonts** - Tipografías Inter y Caveat.
+Un consultorio digital no es solo una web, es un entorno profesional para gestionar tu atención, automatizar procesos y proyectar autoridad.
 
-## 🚀 Cómo Empezar
+| | | |
+|---|---|---|
+| <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/smartphone.webp" width="60"> | <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/earth.webp" width="60"> | <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/calendar-check.webp" width="60"> |
+| **Movilidad Total** | **Mayor Alcance** | **Automatización** |
+| Gestiona tu negocio estés donde estés. Compatible 100% con dispositivos móviles Android y iOS. | Explora y conquista el internet. Vende e integra múltiples canales como Instagram, Facebook, TikTok y mejora tu SEO en Google. | Enfócate en la calidad de tus consultas. Deja la gestión de reservas, recordatorios y captación de leads a tu plataforma digital. |
+| <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/calendar-check.webp" width="60"> | <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/bot.webp" width="60"> | <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/Icons/layout-dashboard.webp" width="60"> |
+| **Captación de Leads** | **Recepcionista 24/7** | **Portal de Cliente** |
+| Convierte visitantes en pacientes. Herramientas integradas para generar prospectos, formularios personalizados y estrategias de fidelización. | Chatbots inteligentes y notificaciones automáticas. Mantén una comunicación fluida y constante sin esfuerzo manual adicional. | Acceso a un panel exclusivo para gestionar operaciones, ver analíticas, dar seguimiento a pacientes y descargar reportes de tu negocio. |
 
-1. Clona este repositorio o descarga el archivo `index.html`.
-2. Abre el archivo en tu navegador web preferido.
-3. No requiere build step; todo se carga vía CDN.
+---
 
-```bash
-# Si prefieres servirlo localmente
-npx serve .
+## 🖥️ Tu Consultorio Digital en Acción
+
+<img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Portafolio/Consultorios%20Digitales/Macbook-Air-bebell-digital-solutions.github.io%20(6).png" alt="Consultorio Digital en MacBook" width="100%">
+
+---
+
+## 💰 Planes y Precios
+
+Elige el plan que mejor se adapte a tu nivel de práctica profesional. Todos incluyen hosting, dominio y soporte premium.
+
+| Plan | Precio | Configuración Inicial | Características |
+|------|--------|----------------------|-----------------|
+| **Start-Up** | $48.77/mes | $295 USD | 1 Landing Page (hasta 2 págs), Dominio + SSL, 2 GB SSD, 1 Correo Profesional, Formulario + Double Opt-In, Chat Widget, Portal de Cliente |
+| **Básico** ⭐ | $78.77/mes | $450 USD | **Sistema de Reservas Integrado**, Sitio Web Completo (hasta 8 págs), 5 GB SSD, Correo Prof. + 1 Reenvío, Chat en Vivo & Exit Pop-Up, Notificaciones Automatizadas, SEO Básico |
+| **Avanzado** | $150.77/mes | $595 USD | **Asistente Inteligente (Bot) 🤖**, Sitio Web Pro (hasta 12 págs), Reservas & 8 GB SSD, Email Marketing, Flujo de Bienvenida & Reportes, SEO Avanzado + 1 Artículo Blog/mes, Soporte VIP |
+
+[![Pago seguro con PayPal](https://bucket.mlcdn.com/a/3336/3336910/images/a55a916fae27396be180e733423f570f40afb57a.png)](https://www.paypal.com)
+
+> *Pagos seguros procesados a través de PayPal. Renovación anual de dominios y correos: $95 USD.*
+
+---
+
+## 🌟 Lo que dicen nuestros clientes
+
+> "10/10 !! Trabajar con este equipo es lo mejor! Los super recomiendo para lo que necesiten en sus companias! Ernesto siempre nos mantiene al dia y ayuda muchisimo con lo que necesite!"  
+> — **Victoria Chediak**, Chef, Poke 305
+
+> "Una Maravillosa Experiencia puedo definirla como: Encontré lo que Buscaba!! Muy satisfecha con las soluciones digitales y servicios que Bebell le ha proporcionado a mi negocio."  
+> — **Michelle Goede**, CEO Senses Luxury Spa
+
+> "Bebelldigitalsolutions ha sido un paso importante para nuestro desarrollo en el mercado moderno donde la tecnología de punta se impone para el crecimiento y posicionamiento de las empresas."  
+> — **Greydys Pose**, CEO Ame Cafe RD
+
+[Ver todos los testimonios →](https://legacymd.online/testimonios)
+
+---
+
+## ❓ Preguntas Frecuentes
+
+<details>
+<summary><strong>¿Qué es un consultorio digital?</strong></summary>
+Un consultorio digital es un entorno profesional diseñado para que especialistas de la salud, bienestar y servicios personalizados gestionen su atención de forma digital. Permite mostrar servicios, recibir solicitudes, agendar citas, comunicarse con pacientes y organizar procesos sin depender de gestiones manuales o presenciales.
+</details>
+
+<details>
+<summary><strong>¿A cuál público va dirigido este programa?</strong></summary>
+1. **Profesionales de la Salud:** Médicos generales y especialistas, psicólogos, terapeutas, nutricionistas, fisioterapeutas.  
+2. **Consultores y Coaches:** Profesionales que ofrecen sesiones privadas o asesorías.  
+3. **Centros Médicos y Clínicas:** Consultorios con uno o varios especialistas.  
+4. **Servicios de Bienestar:** Terapias alternativas, salud integral y bienestar emocional.
+</details>
+
+<details>
+<summary><strong>¿Cuáles son los beneficios de utilizar LegacyMD?</strong></summary>
+Nuestra solución te permite organizar tu agenda, reducir cancelaciones, centralizar la información de tus servicios y facilitar la comunicación con pacientes. También mejora la experiencia de atención, optimiza el tiempo operativo y ayuda a captar nuevos pacientes de forma estructurada.
+</details>
+
+<details>
+<summary><strong>¿Qué nivel de soporte y asistencia puedo esperar?</strong></summary>
+Nuestro equipo ofrece acompañamiento durante el desarrollo, la configuración y el uso del consultorio digital. Brindamos soporte técnico, orientación y ajustes necesarios para asegurar un funcionamiento estable y claro a través de email, WhatsApp y tickets dependiendo de tu plan.
+</details>
+
+<details>
+<summary><strong>¿Qué tan seguro es confiar la gestión de información de pacientes?</strong></summary>
+La seguridad y confidencialidad de la información es una prioridad. Aplicamos buenas prácticas de protección de datos, incluyendo certificados SSL en tu dominio, para garantizar un manejo responsable de la información profesional y de los pacientes.
+</details>
+
+---
+
+## 🚀 ¿Listo para modernizar tu consultorio?
+
+Agenda una consulta virtual sin compromiso con nuestros especialistas en Desarrollo de Negocios Digitales. Te mostraremos cómo transformar tu práctica.
+
+[📅 **Agendar Demo Gratuita**](https://cal.com/bebell-digital-solutions/30min)
+
+---
+
+## 📞 Contacto y Soporte
+
+<table>
+  <tr>
+    <td width="70%" valign="top">
+      <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/18296203970?text=¡Hola!%20Estoy%20interesado/a%20en%20los%20servicios%20de%20LegacyMD.">+1 829-620-3970</a></li>
+        <li><strong>Sitio Web:</strong> <a href="https://legacymd.online">legacymd.online</a></li>
+        <li><strong>Email:</strong> <a href="mailto:soporte@legacymd.online">soporte@legacymd.online</a></li>
+      </ul>
+    </td>
+    <td width="30%" valign="top" align="center">
+      <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Consultorios%20Digitales/legacymd-operator.webp" alt="Soporte 24/7" width="150">
+    </td>
+  </tr>
+</table>
+
+---
+
+**LegacyMD © 2024. Todos los derechos reservados.**  
+Desarrollado con 💚 por [Bebell Digital Solutions](https://bebell.digital).
